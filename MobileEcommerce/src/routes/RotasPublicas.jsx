@@ -1,30 +1,12 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { Home } from './src/pages/home';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Login} from '../pages/Login/index'
 
-const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
-const RotasPublicas = () => {
 
-return(
-    <NavigationContainer>
-    <Tab.Navigator>
-    <Tab.Screen name="Home" component={Home}/>
-    <Tab.Screen name="Carrinho" component={Carrinho}/>
-    <Tab.Screen name="Login" component={Login}/>
-    <Tab.Screen name="Produto" component={Produto}/>
-    </Tab.Navigator>
-
+export const RotasPublicas = () => {
+  return (
     <Stack.Navigator>
-    
-    <Stack.Screen name="Carrinho" component={Carrinho}/>
-    <Stack.Screen name="Produto" component={Produto}/>
-
+      <Stack.Screen name="Login" component={Login} options={{ title: "MEU LOGIN", headerShown: true}} />
     </Stack.Navigator>
-
-    </NavigationContainer>
-)
-
-} 
- export default RotasPublicas
+  );
+};

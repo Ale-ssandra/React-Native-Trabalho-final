@@ -1,20 +1,16 @@
 
 import { NavigationContainer } from '@react-navigation/native';
-import { Home } from './src/pages/home';
+import React from 'react';
+import Routes from './src/routes';
 
-const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator()
+
 const App = () => {
 
-return(
-    <NavigationContainer>
+    return (
+        <NavigationContainer>
+            <Routes/>
+        </NavigationContainer>
+    );
 
-    <Stack.Navigator>
-    <Stack.Screen name="Home" component={Home}/>
-    </Stack.Navigator>
-
-    </NavigationContainer>
-)
-
-} 
- export default App
+};
+export default App
