@@ -1,4 +1,4 @@
-export const Carrinho =({navigation})=>{
+export const Login =({navigation})=>{
     return(
     <>
     
