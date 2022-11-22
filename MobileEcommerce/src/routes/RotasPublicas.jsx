@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator()
 export const RotasPublicas = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} options={{ title: "MEU LOGIN", headerShown: true}} />
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   );
 };
