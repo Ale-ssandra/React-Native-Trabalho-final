@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   StatusBar,
+  Image,
 } from 'react-native';
 import React from 'react';
 import {styles} from './styles';
@@ -19,8 +20,8 @@ export const Login = ({navigation}) => {
         style={styles.imageBackground}>
         <StatusBar translucent={true} backgroundColor={'transparent'} />
         <View style={styles.logo}>
-          <View style={styles.iconShadow}>
-            <Icon name="user-circle-o" size={200} color={'#B69DF8'} />
+          <View style={styles.imageBox}>
+           <Image source={require('../../images/user.png')} style={styles.image}/>
           </View>
         </View>
         <View style={styles.inputBox}>

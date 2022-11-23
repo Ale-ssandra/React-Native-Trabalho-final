@@ -50,11 +50,24 @@ export const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: '#AEA9B4',
     borderRadius: 100,
-  },
+    },
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
     color:'white'
   
   },
+
+  imageBox:{
+    borderRadius: 180,
+    width: 200,
+    height: 200,
+    elevation: 7,
+    shadowColor: '#000',
+  },
+  image:{
+    width: 200,
+    height: 200,
+    tintColor: '#B69DF8',
+  }
 });

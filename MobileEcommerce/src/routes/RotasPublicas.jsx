@@ -6,7 +6,7 @@ import {Carrinho} from '../pages/Carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
 import { Colaboradores } from '../pages/Colaboradores';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Produto } from '../pages/produto';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,7 +33,7 @@ export const RotasPublicas = () => {
       }}>
       <Tab.Screen 
       name="Home" 
-      component={Home} 
+      component={Produto} 
       options={{headerShown: false,
       tabBarIcon: ({focused}) =>
         (
@@ -51,7 +51,7 @@ export const RotasPublicas = () => {
       />
       <Tab.Screen
         name="Pesquisa"
-        component={Pesquisa}
+        component={Produto}
         options={{headerShown: false,
           tabBarIcon: ({focused}) =>
             (
@@ -61,7 +61,7 @@ export const RotasPublicas = () => {
                   height: 30,
                   tintColor: focused ? '#B69DF8' : 'white',
                 }} />
-                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Pesquisar</Text>
+                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Produto</Text>
               </View>
             )
         }} 
