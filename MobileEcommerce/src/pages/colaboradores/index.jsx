@@ -5,8 +5,12 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Linking
 } from 'react-native';
 export const Colaboradores = ({navigation}) => {
+  const link = (site) => {
+    Linking.openURL(site);
+  }
   return (
     <>
       <ScrollView style={styles.container}>
@@ -34,20 +38,24 @@ export const Colaboradores = ({navigation}) => {
           </Text>
           <Text style={styles.contato}>Entre em contato com Alessandra</Text>
           <View style={styles.social}>
-            <TouchableOpacity>
+          
+            <TouchableOpacity style={styles.midia} onPress={() => link("https://www.linkedin.com/in/alessandra-pinheiro-30b085178/")}>
+              
               <Image
                 style={styles.contatoLinkedin}
                 source={require('../../images/linkedin.png')}></Image>
             </TouchableOpacity>
-            <TouchableOpacity>
+          
+            <TouchableOpacity style={styles.midia} onPress={() => link("https://github.com/Ale-ssandra")}>
               <Image
                 style={styles.contatoGit}
                 source={require('../../images/github.png')}></Image>
             </TouchableOpacity>
+                
+          </View>
             <Image
               style={styles.arrow}
               source={require('../../images/down-arrow.png')}></Image>
-          </View>
         </View>
         <View style={styles.box}>
           <Image
@@ -66,16 +74,22 @@ export const Colaboradores = ({navigation}) => {
           </Text>
           <Text style={styles.contato}>Entre em contato com Erick</Text>
           <View style={styles.social}>
+          
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://www.linkedin.com/in/erickviana/")}>
             <Image
               style={styles.contatoLinkedin}
               source={require('../../images/linkedin.png')}></Image>
+          </TouchableOpacity>
+        
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://github.com/ErickNotFound")}>
             <Image
               style={styles.contatoGit}
               source={require('../../images/github.png')}></Image>
-            <Image
+          </TouchableOpacity>
+        </View>
+        <Image
               style={styles.arrow}
               source={require('../../images/down-arrow.png')}></Image>
-          </View>
         </View>
         <View style={styles.box}>
           <Image
@@ -94,16 +108,23 @@ export const Colaboradores = ({navigation}) => {
           </Text>
           <Text style={styles.contato}>Entre em contato com Thaísa</Text>
           <View style={styles.social}>
+          
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://www.linkedin.com/in/tha%C3%ADsa-muniz89/")}>
             <Image
               style={styles.contatoLinkedin}
               source={require('../../images/linkedin.png')}></Image>
+          </TouchableOpacity>
+        
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://github.com/thaisamuniz89")}>
             <Image
               style={styles.contatoGit}
               source={require('../../images/github.png')}></Image>
-            <Image
+          </TouchableOpacity>
+              
+        </View>
+        <Image
               style={styles.arrow}
               source={require('../../images/down-arrow.png')}></Image>
-          </View>
         </View>
         <View style={styles.box}>
           <Image
@@ -122,16 +143,23 @@ export const Colaboradores = ({navigation}) => {
           </Text>
           <Text style={styles.contato}>Entre em contato com José Pedro</Text>
           <View style={styles.social}>
+          
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://www.linkedin.com/in/jos%C3%A9-pedro-nolasco-31a057221/")}>
             <Image
               style={styles.contatoLinkedin}
               source={require('../../images/linkedin.png')}></Image>
+          </TouchableOpacity>
+        
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://github.com/J-Pedr0")}>
             <Image
               style={styles.contatoGit}
               source={require('../../images/github.png')}></Image>
-            <Image
+          </TouchableOpacity>
+              
+        </View>
+        <Image
               style={styles.arrow}
               source={require('../../images/down-arrow.png')}></Image>
-          </View>
         </View>
         <View style={styles.box}>
           <Image
@@ -150,13 +178,20 @@ export const Colaboradores = ({navigation}) => {
           </Text>
           <Text style={styles.contato}>Entre em contato com Gabriel</Text>
           <View style={styles.social}>
+          
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://www.linkedin.com/in/gabriel-pinheiro-358b6986/")}>
             <Image
               style={styles.contatoLinkedin}
               source={require('../../images/linkedin.png')}></Image>
+          </TouchableOpacity>
+        
+          <TouchableOpacity style={styles.midia} onPress={() => link("https://github.com/BilPinheiro")}>
             <Image
               style={styles.contatoGit}
               source={require('../../images/github.png')}></Image>
-          </View>
+          </TouchableOpacity>
+              
+        </View>
         </View>
       </ScrollView>
     </>
@@ -225,27 +260,38 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     color: '#B89EFC',
   },
-  social: {
-    marginTop: 20,
+  social:{
+
+  flexDirection:'row',
+  justifyContent:'space-around',
+  width:'50%',
+  left:'50%',
+  marginLeft:-200,
+  marginBottom:'-40%',
+
   },
 
   contatoLinkedin: {
     width: 50,
     height: 50,
-    marginBottom: '-58%',
-    marginTop: '47%',
-    marginLeft: '50%',
+  
   },
   contatoGit: {
     width: 50,
     height: 50,
-    marginTop: '45%',
-    marginLeft: '35%',
+    
   },
   arrow: {
     width: 100,
     height: 70,
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: '50%',
   },
+ midia:{
+  marginTop: '100%',
+  width: 50,
+  height: 50,
+
+ }
+  
 });
