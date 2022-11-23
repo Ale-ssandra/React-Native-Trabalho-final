@@ -4,6 +4,7 @@ import {Login} from '../pages/Login/index';
 import {Home} from '../pages/Home';
 import {Carrinho} from '../pages/Carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
+import { Colaboradores } from '../pages/Colaboradores';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -81,6 +82,24 @@ export const RotasPublicas = () => {
               </View>
             )
         }} 
+      />
+      <Tab.Screen 
+      name="Colaboradores" 
+      component={Colaboradores} 
+      options={{headerShown: false,
+      tabBarIcon: ({focused}) =>
+        (
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <Image source={require('../images/hacker.png')} resizeMode='contain' style={{
+              width: 30,
+              height: 30,
+              tintColor: focused ? '#B69DF8' : 'white',
+            }} />
+            <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Staff</Text>
+          </View>
+        )
+    }} 
+      
       />
       <Tab.Screen
         name="Login"
