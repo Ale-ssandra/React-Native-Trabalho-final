@@ -43,7 +43,7 @@ export const RotasPublicas = () => {
               height: 30,
               tintColor: focused ? '#B69DF8' : 'white',
             }} />
-            <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Home</Text>
+            <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Home</Text>
           </View>
         )
     }} 
@@ -61,7 +61,7 @@ export const RotasPublicas = () => {
                   height: 30,
                   tintColor: focused ? '#B69DF8' : 'white',
                 }} />
-                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Pesquisar</Text>
+                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Pesquisar</Text>
               </View>
             )
         }} 
@@ -78,7 +78,7 @@ export const RotasPublicas = () => {
                   height: 30,
                   tintColor: focused ? '#B69DF8' : 'white',
                 }} />
-                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Carrinho</Text>
+                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Carrinho</Text>
               </View>
             )
         }} 
@@ -95,7 +95,7 @@ export const RotasPublicas = () => {
               height: 30,
               tintColor: focused ? '#B69DF8' : 'white',
             }} />
-            <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Staff</Text>
+            <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Staff</Text>
           </View>
         )
     }} 
@@ -113,7 +113,7 @@ export const RotasPublicas = () => {
                   height: 30,
                   tintColor: focused ? '#B69DF8' : 'white',
                 }} />
-                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12}}>Login</Text>
+                <Text style={{color: focused ? '#B69DF8' : 'white', fontSize: 12, marginTop: 3}}>Login</Text>
               </View>
             )
         }} 
