@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {styles} from './styles.js';
 
-export const Card = () => {
+export const Card = ({ item }) => {
   const [qtd, setQtd] = useState(1);
 
   const adicionar = () => {
@@ -23,7 +23,7 @@ export const Card = () => {
       setQtd(qtd - 1);
     }
   };
-
+  
   return (
     <View style={styles.card}>
       <TouchableOpacity>
@@ -40,14 +40,15 @@ export const Card = () => {
       <View style={styles.preco}>
         <Image
           source={{
-            uri: 'https://w7.pngwing.com/pngs/315/715/png-transparent-burger-with-ham-and-cheese-hamburger-bacon-sushi-pizza-cheeseburger-burger-king-food-recipe-cheese-thumbnail.png',
+            uri: item.foto,
           }}
           style={{
             width: 60.62,
             height: 36.93,
+            resizeMode: 'contain'
           }}
         />
-        <Text>R$ 30,00</Text>
+        <Text style={styles.texto}>R$ {item.preco}</Text>
       </View>
       <View styles={styles.qtd}>
         <TouchableOpacity onPress={adicionar}>
@@ -56,7 +57,7 @@ export const Card = () => {
             style={styles.imagens}
           />
         </TouchableOpacity>
-        <Text style={styles.texto}>{qtd}</Text>
+        <Text style={styles.quantidade}>{qtd}</Text>
 
         <TouchableOpacity onPress={subtrair}>
           <Image

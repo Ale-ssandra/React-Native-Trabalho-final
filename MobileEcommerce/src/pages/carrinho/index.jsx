@@ -7,26 +7,27 @@ import {
   StatusBar,
   FlatList,
 } from 'react-native';
-import { useState, useEffect} from 'react';
-import { Card } from '../../components/Card/card.jsx'
-import { getFood } from '../../services/taskClient.js';
-import { styles } from './styles.js';
-
-
-
-
+import {useState, useEffect} from 'react';
+import {Card} from '../../components/Card/card.jsx';
+import {getFood} from '../../services/taskClient.js';
+import {styles} from './styles.js';
 
 export const Carrinho = ({navigation}) => {
-  
   const [produtos, setProdutos] = useState([]);
-  
+  const [valorTotal, setValorTotal] = useState(0);
+
   useEffect(() => {
     const esperaEstaPorra = async () => {
-    const teste = await getFood();
-    setProdutos(teste);
-    }
+      const teste = await getFood();
+      setProdutos(teste);
+    };
     esperaEstaPorra();
-  },[]);
+  }, []);
+
+  const somaTotal = () => {
+    setValorTotal(valorTotal + (item.preco * qtd))
+  }
+
 
   return (
     <ImageBackground
@@ -38,13 +39,13 @@ export const Carrinho = ({navigation}) => {
       <StatusBar translucent={true} backgroundColor={'transparent'} />
       <View style={styles.header}>
         <Text style={styles.texto}>Carrinho</Text>
-        <Text style={styles.texto}>R$ 120,00</Text>
+        <Text style={styles.texto}>R$ {valorTotal}</Text>
       </View>
-      <FlatList 
-        data={produtos} 
-        keyExtractor={item => item.id} 
-        renderItem={({item}) => <Card />} 
-        />
+      <FlatList
+        data={produtos}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <Card item={item}/>}
+      />
       <View style={styles.finalizar}>
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.botaoTexto}>Finalizar compra</Text>

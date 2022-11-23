@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     width: '100%',
-    height: '9.6%',
+    height: '12%',
   },
   texto: {
     padding: 6,
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   botao: {
     width: 206,
-    height: 49,
+    height: 48,
     backgroundColor: '#EE6B22',
     borderRadius: 25,
     justifyContent: 'center',

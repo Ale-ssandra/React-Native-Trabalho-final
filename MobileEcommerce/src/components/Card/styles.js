@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     width: 334,
     height: 89,
     borderRadius: 15,
-    marginTop: 12,
+    marginTop: 6,
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
@@ -23,12 +23,19 @@ export const styles = StyleSheet.create({
   qtd: {
     position: 'absolute',
   },
-  text:{
-    color: '#ffff'
+  texto:{
+    color: '#000',
+    fontSize: 20,
+    fontWeight: '700'
   },
   imagens: {
     right: 3,
     width: 24,
     height: 24,
   },
+  quantidade:{
+    color: '#000',
+    fontWeight: '700',
+    
+  }
 });
