@@ -1,17 +1,33 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
   ImageBackground,
-  Image,
   StatusBar,
+  FlatList,
 } from 'react-native';
+import { useState, useEffect} from 'react';
 import { Card } from '../../components/Card/card.jsx'
+import { getFood } from '../../services/taskClient.js';
 import { styles } from './styles.js';
 
+
+
+
+
 export const Carrinho = ({navigation}) => {
+  
+  const [produtos, setProdutos] = useState([]);
+  
+  useEffect(() => {
+    const esperaEstaPorra = async () => {
+    const teste = await getFood();
+    setProdutos(teste);
+    }
+    esperaEstaPorra();
+  },[]);
+
   return (
     <ImageBackground
       source={{
@@ -24,9 +40,11 @@ export const Carrinho = ({navigation}) => {
         <Text style={styles.texto}>Carrinho</Text>
         <Text style={styles.texto}>R$ 120,00</Text>
       </View>
-
-      <Card />
-
+      <FlatList 
+        data={produtos} 
+        keyExtractor={item => item.id} 
+        renderItem={({item}) => <Card />} 
+        />
       <View style={styles.finalizar}>
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.botaoTexto}>Finalizar compra</Text>

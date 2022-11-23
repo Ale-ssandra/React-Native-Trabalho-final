@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1C1B1F',
     alignItems: 'center',
+    paddingBottom: 128,
   },
   header: {
     flexDirection: 'row',
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
   },
   finalizar: {
     position: 'absolute',
-    bottom: 100,
+    bottom: 80,
     left: '50%',
     marginLeft: -104,
   },
