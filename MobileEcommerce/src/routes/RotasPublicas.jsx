@@ -37,7 +37,7 @@ export const RotasPublicas = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Carrinho}
+        component={Home}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
