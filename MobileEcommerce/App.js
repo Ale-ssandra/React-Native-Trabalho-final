@@ -7,8 +7,8 @@ const App = () => {
 
     return (
         <NavigationContainer>
-            {/* <Routes/> */}
-            <Colaboradores/>
+             <Routes/>
+           {/* <Colaboradores/> */}
         </NavigationContainer>
     );
 
