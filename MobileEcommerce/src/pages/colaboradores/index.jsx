@@ -1,4 +1,4 @@
-import { Text, View, Button, StyleSheet, ScrollView, Image, } from "react-native"
+import { Text, View,StyleSheet, ScrollView, Image,TouchableOpacity} from "react-native"
 export const Colaboradores = ({ navigation }) => {
     return (
         <>
@@ -14,11 +14,15 @@ export const Colaboradores = ({ navigation }) => {
                     <Image style={styles.image} source={{ uri: 'https://avatars.githubusercontent.com/u/96076314?v=4' }}>
                     </Image >
                     <Text style={styles.nome}>Alessandra Pinheiro</Text>
-                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
+                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
                     <Text style={styles.contato} >Entre em contato com Alessandra</Text>
                     <View style={styles.social}>
+                        <TouchableOpacity>
                         <Image style={styles.contatoLinkedin} source={require('../Colaboradores/linkedin.png')}></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity >
                         <Image style={styles.contatoGit} source={require('../Colaboradores/github.png')}></Image>
+                        </TouchableOpacity>
                         <Image style={styles.arrow} source={require('../Colaboradores/down-arrow.png')}></Image>
 
                     </View>
@@ -27,7 +31,7 @@ export const Colaboradores = ({ navigation }) => {
                     <Image style={styles.image} source={{ uri: 'https://avatars.githubusercontent.com/u/102622495?v=4' }}>
                     </Image >
                     <Text style={styles.nome}>Erick Viana</Text>
-                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
+                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
                     <Text style={styles.contato} >Entre em contato com Erick</Text>
                     <View style={styles.social}>
                         <Image style={styles.contatoLinkedin} source={require('../Colaboradores/linkedin.png')}></Image>
@@ -39,7 +43,7 @@ export const Colaboradores = ({ navigation }) => {
                     <Image style={styles.image} source={{ uri: 'https://avatars.githubusercontent.com/u/110869515?v=4' }}>
                     </Image >
                     <Text style={styles.nome}>Thaísa Muniz </Text>
-                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
+                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
                     <Text style={styles.contato}>Entre em contato com Thaísa</Text>
                     <View style={styles.social}>
                         <Image style={styles.contatoLinkedin} source={require('../Colaboradores/linkedin.png')}></Image>
@@ -51,7 +55,7 @@ export const Colaboradores = ({ navigation }) => {
                     <Image style={styles.image} source={{ uri: 'https://avatars.githubusercontent.com/u/80910617?v=4' }}>
                     </Image >
                     <Text style={styles.nome}>José Pedro</Text>
-                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
+                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
                     <Text style={styles.contato} >Entre em contato com José Pedro</Text>
                     <View style={styles.social}>
                         <Image style={styles.contatoLinkedin} source={require('../Colaboradores/linkedin.png')}></Image>
@@ -63,7 +67,7 @@ export const Colaboradores = ({ navigation }) => {
                     <Image style={styles.image} source={{ uri: 'https://avatars.githubusercontent.com/u/110867246?v=4' }}>
                     </Image >
                     <Text style={styles.nome}>Gabriel Pinheiro</Text>
-                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
+                    <Text style={styles.sobre}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Text>
                     <Text style={styles.contato} >Entre em contato com Gabriel</Text>
                     <View style={styles.social}>
                         <Image style={styles.contatoLinkedin} source={require('../Colaboradores/linkedin.png')}></Image>
@@ -84,12 +88,9 @@ const styles = StyleSheet.create({
         color: '#B89EFC',
         fontSize: 25,
         fontWeight: "900",
-        // marginBottom: '-50%',
-        // marginTop: '15%',
-        // textAlign: "center",
     },
     box: {
-        marginTop: '25%',
+        marginTop: '20%',
         height: 600,
         width: '100%',
         backgroundColor: '#272626',
@@ -110,9 +111,6 @@ const styles = StyleSheet.create({
     icone: {
         width: 50,
         height: 50,
-        // marginLeft: 30,
-        // marginTop: '30%',
-        // marginBottom: '-50%'
     },
     header: {
         display: "flex",
@@ -167,10 +165,10 @@ const styles = StyleSheet.create({
         marginLeft: '35%',
     },
     arrow:{
-        width: 70,
+        width: 100,
         height: 70,
         alignSelf: "center",
-        marginTop: 90,
+        marginTop: 50,
 
     }
 });
