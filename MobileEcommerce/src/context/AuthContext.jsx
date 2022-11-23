@@ -9,6 +9,7 @@ const AuthContext = createContext()
 export const AuthProvider = ({children}) => {
     const [user , setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [carrinho, setCarrinho] = useState([]);
 
     const loginContext = async () => {
      const response =  await login();
