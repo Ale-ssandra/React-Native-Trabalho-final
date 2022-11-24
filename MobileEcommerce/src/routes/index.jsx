@@ -1,12 +1,16 @@
+import { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
-import {RotasPrivadas} from './RotasPrivadas';
-import { RotasPublicas} from './RotasPublicas';
+import { Login } from '../pages/Login';
+import  { RotasPrivadas }  from './RotasPrivadas';
+import { RotasPublicas } from './RotasPublicas';
 
 
 const Routes = () => {
-    return (
-            <RotasPublicas />
-    )
+        const { logado, loading } = useContext(AuthContext)
+
+        if(loading) return < Login />
+   
+       return logado ? <RotasPrivadas /> : <RotasPublicas />
 }
 
 export default Routes;

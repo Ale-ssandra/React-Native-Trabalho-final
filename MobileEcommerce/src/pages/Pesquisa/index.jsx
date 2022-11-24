@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { styles } from "./style"
 import AuthContext from "../../context/AuthContext"
 import CardProdutos from "../../components/CardProdutos"
+import { ButtonCategoria } from "../../components/ButtonCategoria"
 
 export const Pesquisa =(item)=>{
     
@@ -11,17 +12,8 @@ export const Pesquisa =(item)=>{
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
    
    useEffect(() => {
-        setProdutosFiltrados(produtosFiltrados.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))   
-    
-}, [pesquisa]);
-
-    useEffect(()=>{
-        if(categoriaPesquisa != null){
-            setProdutosFiltrados(produtos.filter(produto => produto.categoriaId == categoriaPesquisa.id))
-        }  else{
-            setProdutosFiltrados(produtos);
-        }
-    } ,[categoriaPesquisa]); //])
+        setProdutosFiltrados(produtos.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))
+}, [pesquisa, categoriaPesquisa])
    
     return(
         <View style={styles.container}>
@@ -31,18 +23,23 @@ export const Pesquisa =(item)=>{
             </View>
             <View style={styles.boxFiltros}>
                 <Text style={styles.textInput}>Pesquisa: </Text>
-                <Text style={styles.textInput} onPress={() => setCategoriaPesquisa(null)}>(Filtros Ativos) </Text>
+                <ButtonCategoria />
             </View>
             <ImageBackground
         imageStyle={{opacity: 0.08}}
         source={require('../../images/texturaFundo.png')}
         style={styles.imageBackground}>
              <FlatList
-            numColumns={2}
             data={produtosFiltrados}
+            numColumns={2}
             keyExtractor={item => item.id}
-            renderItem={({item}) => 
-            <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
+            renderItem={({item}) => {
+                if(categoriaPesquisa != null){
+                    if(item.categoriaId == categoriaPesquisa.id){
+                      return <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
+                    }
+                }else return <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
+            }
             } 
             />
 

@@ -35,12 +35,13 @@ export const styles = StyleSheet.create({
         height: '7%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent:'space-around',
+        justifyContent:'space-between',
         paddingTop: 20,
       },  
       textInput:{
         fontSize: 20,
         color: '#FFFFFF',
+        left: 30,
       },
       imageBackground: {
         flex: 1,

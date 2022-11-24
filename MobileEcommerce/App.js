@@ -9,8 +9,7 @@ const App = () => {
     return (
         <NavigationContainer>
            <AuthProvider>
-
-                <Routes/>
+                <Routes />
            </AuthProvider>
             </NavigationContainer>
     );

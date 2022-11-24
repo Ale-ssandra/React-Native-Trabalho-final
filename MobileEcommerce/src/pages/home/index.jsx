@@ -17,7 +17,6 @@ import CardProdutos from '../../components/CardProdutos';
 export const Home = ({navigation}) => {
   const {produtos, categoria} = useContext(AuthContext)
   
-  let i = 1;
 
 
   return (
@@ -69,7 +68,7 @@ export const Home = ({navigation}) => {
             keyExtractor={item => item.id}
             style={styles.cardsProdutos}
             renderItem={({item}) => 
-            item.categoriaId == i ? <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View> : null
+            item.categoriaId == 1 ? <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View> : null
             } 
             />
             </View>

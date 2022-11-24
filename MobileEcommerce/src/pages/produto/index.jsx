@@ -1,6 +1,5 @@
 import {StatusBar} from 'react-native';
 import {
-  StyleSheet,
   Text,
   View,
   Image,

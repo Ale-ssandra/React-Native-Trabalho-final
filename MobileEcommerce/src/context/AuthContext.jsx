@@ -14,7 +14,6 @@ export const verificaEstaParada = async (userName, password) => {
     console.log('a');
     if (userName == acesso.login && password == acesso.senha) {
       console.log('foi');
-      retorno = true;
     }
   });
   return retorno; 
@@ -31,15 +30,16 @@ export const AuthProvider = ({children}) => {
   const [categoria, setCategoria] = useState([]);
   const [categoriaPesquisa, setCategoriaPesquisa] = useState(null);
   const [carrinho, setCarrinho] = useState([]);
+  const [produtoEscolido, setProdutoEscolido] = useState(null);
 
   const loginContext = async () => {
-    const response = await login();
-    if (response.token && response.user) {
-      setUser(response.user);
-      api.defaults.headers['Authorization'] = `Bearer ${response.token}`;
-      await AsyncStorage.setItem('@app_user', JSON.stringify(response.user));
-      await AsyncStorage.setItem('@app_token', response.token);
-    }
+    // if (response.token && response.user) {
+    //   setUser(response.user);
+    //   api.defaults.headers['Authorization'] = `Bearer ${response.token}`;
+    //   await AsyncStorage.setItem('@app_user', JSON.stringify(response.user));
+    //   await AsyncStorage.setItem('@app_token', response.token);
+    // }
+    setUser("teste")
   };
   useEffect(() => {
     const verificaStorage = async () => {
@@ -81,6 +81,8 @@ export const AuthProvider = ({children}) => {
         adicionarCarrinho,
         setCategoriaPesquisa: setCategoriaPesquisa,
         categoriaPesquisa: categoriaPesquisa,
+        setProdutoEscolido: setProdutoEscolido,
+        produtoEscolido: produtoEscolido,
       }}>
       {children}
     </AuthContext.Provider>

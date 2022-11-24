@@ -18,7 +18,6 @@ export const Carrinho = ({navigation}) => {
   const [valorTotal, setValorTotal] = useState(0);
 
 
-
   const somaTotal = (valorTotal, item) => {
     setValorTotal(valorTotal + item.preco * qtd)
   };

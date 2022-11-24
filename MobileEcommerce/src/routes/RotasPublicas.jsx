@@ -108,34 +108,6 @@ export const RotasPublicas = () => {
         }}
       />
       <Tab.Screen
-        name="Carrinho"
-        component={Carrinho}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('../images/carrinho.png')}
-                resizeMode="contain"
-                style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#B69DF8' : 'white',
-                }}
-              />
-              <Text
-                style={{
-                  color: focused ? '#B69DF8' : 'white',
-                  fontSize: 12,
-                  marginTop: 3,
-                }}>
-                Carrinho
-              </Text>
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Colaboradores"
         component={Colaboradores}
         options={{

@@ -13,7 +13,8 @@ import { mandarParaCarrinho } from '../../pages/produto/'
 export const Card = ({ route, qtdProduto }) => {
   const [qtd, setQtd] = useState(qtdProduto);
 
-  console.log(route.params.preco)
+  console.log(qtdProduto)
+  console.log(route)
   
   const adicionar = () => {
     setQtd(qtdProduto + 1);

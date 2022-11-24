@@ -7,13 +7,14 @@ import {
   StatusBar,
   Image,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {styles} from './styles';
-import {verificaEstaParada} from '../../context/AuthContext';
+import AuthContext, {verificaEstaParada} from '../../context/AuthContext';
 
 export const Login = ({navigation}) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
+  const {loginContext} = useContext(AuthContext)
 
   const verificacaoLogin = async () => {
     if (userName != null || password != null) {
@@ -63,7 +64,7 @@ export const Login = ({navigation}) => {
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>
-            <Text onPress={() => verificacaoLogin()} style={styles.buttonText}>
+            <Text onPress={() => loginContext()} style={styles.buttonText}>
               Entrar
             </Text>
           </TouchableOpacity>
