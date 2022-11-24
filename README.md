@@ -1,14 +1,27 @@
 ## Trabalho de react-native
 
-Aplicativo para Gerenciar Ecommerce
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
+
+Quer pedir sua comida preferida no conforto da sua casa?<b> 
+<BR> Venha conhecer nosso aplicativo, as melhores comidas em um so lugar!<b>
+
+
+
+
+
+
+![Logo](https://user-images.githubusercontent.com/96076314/203858170-a8de917f-8b2c-4b38-b442-0bd2c94d3850.png)
+
+
+
+
 
 
 ## Autores
 
-- [@octokatherine](https://www.github.com/octokatherine)
+
 
 
 ## Requisitos 
@@ -33,7 +46,8 @@ Página Contendo os Integrantes do Grupo
 
 ## Variáveis de Ambiente
 
-Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente. Obs 
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente. 
+observação
 
 `npm install`
 
@@ -41,10 +55,12 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 `
 
 
-## Funcionalidades
+## Bônus
 
-- Temas dark e light
-- Preview em tempo real
-- Modo tela cheia
-- Multiplataforma
+Monitoramento de conexão a internet - Caso o dispositivo não tenha acesso a internet, exibir a informação
+Uso de bibliotecas externas para estilização - Ex: Paper, Native base, Styled Components
+Splash Screen - Animação de entrada no aplicativo
+
+Salvar os produtos no banco de dados e permitir que sejam visualizados quando o dispositivo estiver offline 
+
 
