@@ -19,9 +19,13 @@ cardCategoria: {
 imgCategoria : {
     width: 50,
     height: 50,
-    borderRadius: 80,
-    backgroundColor: 'black',
-    
+    borderRadius: 80,    
+},
+
+image:{
+    width: 50,
+    height: 50,
+    borderRadius: '100%'
 },
 textoCategoria:{
     color: '#000000',
