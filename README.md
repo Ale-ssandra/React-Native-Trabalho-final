@@ -4,8 +4,8 @@
 
 
 
-Quer pedir sua comida preferida no conforto da sua casa?<b> 
-<BR> Venha conhecer nosso aplicativo, as melhores comidas em um so lugar!<b>
+Quer pedir sua comida preferida no conforto da sua casa?<b> 🍔 🍕
+<BR> Venha conhecer nosso aplicativo, as melhores comidas em um so lugar!<b> 😀😋
 
 
 
