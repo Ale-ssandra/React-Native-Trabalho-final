@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Linking
 } from 'react-native';
-import { styles } from '../colaboradores/style';
+import { styles } from './style';
 export const Colaboradores = ({navigation}) => {
   const link = (site) => {
     Linking.openURL(site);

@@ -1,14 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login} from '../pages/Login/index';
+import {Login} from '../pages/Login';
 import {Home} from '../pages/Home';
-import {Carrinho} from '../pages/carrinho/index';
+import {Carrinho} from '../pages/Carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
-<<<<<<< HEAD
-import { Colaboradores } from '../pages/colaboradores';
-=======
 import {Colaboradores} from '../pages/Colaboradores';
->>>>>>> d49cb6e5f767b66d503a1ca22a33ee7a7a554476
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {Produto} from '../pages/produto';
 

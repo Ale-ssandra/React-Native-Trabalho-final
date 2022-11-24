@@ -24,7 +24,8 @@ export const Home = ({navigation})=>{
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.texto}>Home</Text>
-                <Text style={styles.texto}>R$ 120,00</Text>
+                <Text style={styles.texto}>Logo</Text>
+                <Text style={styles.texto}>Loja</Text>
             </View>
 
             <ImageBackground
@@ -32,7 +33,14 @@ export const Home = ({navigation})=>{
                 source={require('../../images/texturaFundo.png')}
                 style={styles.imageBackground}>
                 
-            {/* <View style={styles.banner}><Text>BANNER</Text></View> */}
+                <View style={styles.banner}>
+                    <View style={{flexDirection: 'column', justifyContent: 'center', padding:12}}>
+                        <Text style={styles.textoBanner}>Ganhe</Text>
+                        <Text style={styles.textoBanner}>até 20% off</Text>
+                    </View>
+                    <Image style={{width: 120, height:120}}source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigbXuQd0qPA4daOcE_WJmFSVY_56PqygHX-mDkgrwRTZJT0rxmjg9fq912j_Bgp-cM8A&usqp=CAU'}}/>
+                </View>
+            
             <View>
                 <CardCategoria/>
             </View>
@@ -58,13 +66,6 @@ export const Home = ({navigation})=>{
 
 
     //         <ScrollView style={styles.container}>
-    //             <View style={styles.banner}>
-    //                 <View style={{flexDirection: 'column', justifyContent: 'space-evenly', padding:12}}>
-    //                     <Text style={styles.texto}>Ganhe</Text>
-    //                     <Text style={styles.texto}>até 20% off</Text>
-    //                 </View>
-    //                 <Image style={{width: 120, height:120}}source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigbXuQd0qPA4daOcE_WJmFSVY_56PqygHX-mDkgrwRTZJT0rxmjg9fq912j_Bgp-cM8A&usqp=CAU'}}/>
-    //             </View>
                
 
     //             <SafeAreaView style={{marginBottom: 10}}>
@@ -112,31 +113,43 @@ export const Home = ({navigation})=>{
             
         },
         header: {
-            backgroundColor:'#1C1B1F',
+            backgroundColor: '#272626',
             flexDirection: 'row',    
             justifyContent: 'space-between',
             alignItems:'center',
+            alignItems: 'flex-end',
             width: '100%',
-            padding: 15,
-            height: 75           
-        },
+            height: '12%',        
+                },
         banner:{
-            flex:1,
+            display: 'flex',
             flexDirection: 'row',
+            alignItems: 'center',
             backgroundColor:'#FFFBFE',
-            width: '80%',
+            width: '76%',
             height: 168,
-            marginStart: '10%',
-            marginTop: 10,
-            marginBottom:10,
+            marginStart: '14%',
+            marginVertical: 15,
             borderRadius:15
         },
-        texto:{
+        texto: {
+            padding: 6,
+            color: '#ffff',
+            fontSize: 26,
+            fontWeight: '400',
+            textShadowColor: 'rgba(0, 0, 0, 0.8)',
+            textShadowOffset: {width: 6, height: 5},
+            textShadowRadius: 4,
+          },
+        textoBanner: {
+            padding: 6,
             color: '#000000',
-            fontSize: 30,
-            fontWeight: "900",
-            textAlign: 'left'
-        },
+            fontSize: 26,
+            fontWeight: '800',
+            textShadowColor: 'lightgrey',
+            textShadowOffset: {width: 6, height: 5},
+            textShadowRadius: 4,
+          },
         textoNome:{
             color: '#000000',
             fontSize: 18,

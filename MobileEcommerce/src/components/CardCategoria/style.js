@@ -12,8 +12,8 @@ cardCategoria: {
     color: 'black',
     borderRadius: 50,
     marginHorizontal: 10,
-    marginBottom: 10,
-    marginVertical: 10,
+    marginBottom: 15,
+    
  
 },
 imgCategoria : {
