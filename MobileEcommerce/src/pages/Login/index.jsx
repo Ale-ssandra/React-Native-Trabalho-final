@@ -7,18 +7,23 @@ import {
   StatusBar,
   Image,
 } from 'react-native';
-import React, { useState } from "react";
+import React, {useState} from 'react';
 import {styles} from './styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {AuthProvider} from '../../context/AuthContext';
 import {verificaEstaParada} from '../../context/AuthContext';
 
 export const Login = ({navigation}) => {
+  const [userName, setUserName] = useState(null);
+  const [password, setPassword] = useState(null);
 
-  const [  userName,setUserName] = useState("")
-    const [  password,setPassword] = useState("")
+  const verificacaoLogin = async () => {
+    if (userName != null) {
+      const teste = await verificaEstaParada(userName, password);
+      if (!teste) {
+        alert('erro');
+      }
+    }
+  };
 
-  
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -42,7 +47,7 @@ export const Login = ({navigation}) => {
             placeholderTextColor={'#E8DEF8'}
             editable
             maxLength={40}
-            onChange={setUserName} 
+            onChange={setUserName}
             value={userName}
           />
           <TextInput
@@ -53,13 +58,11 @@ export const Login = ({navigation}) => {
             editable
             maxLength={40}
             secureTextEntry={true}
-            onChange={setPassword} 
+            onChange={setPassword}
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>
-            <Text
-              onPress={() => verificaEstaParada(userName, password)}
-              style={styles.buttonText}>
+            <Text onPress={() => verificacaoLogin()} style={styles.buttonText}>
               Entrar
             </Text>
           </TouchableOpacity>
