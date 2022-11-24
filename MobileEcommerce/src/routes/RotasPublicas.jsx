@@ -5,10 +5,6 @@ import {Home} from '../pages/Home';
 import {Carrinho} from '../pages/Carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
 import {Colaboradores} from '../pages/Colaboradores';
-<<<<<<< HEAD
-
-=======
->>>>>>> 2d700fab629606b63caa7a1f0af24e338361c636
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {Produto} from '../pages/produto';
 
@@ -85,7 +81,7 @@ export const RotasPublicas = () => {
                   fontSize: 12,
                   marginTop: 3,
                 }}>
-                Produto
+                Pesquisa
               </Text>
             </View>
           ),

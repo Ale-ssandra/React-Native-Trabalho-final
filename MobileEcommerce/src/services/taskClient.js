@@ -17,6 +17,14 @@ export const getLogin = async () => {
         console.log(e)
     }
 }
+export const getCategoria = async () => {
+    try{
+        const task = await api.get("/categoria")
+        return task
+    } catch(e) {
+        console.log(e)
+    }
+}
 
 // export const deleteTask = async (id) => {
 //     try{

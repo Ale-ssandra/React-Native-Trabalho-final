@@ -16,10 +16,11 @@ export const Login = ({navigation}) => {
   const [password, setPassword] = useState(null);
 
   const verificacaoLogin = async () => {
-    if (userName != null) {
-      const teste = await verificaEstaParada(userName, password);
-      if (!teste) {
-        alert('erro');
+    if (userName != null || password != null) {
+      const retorno = await verificaEstaParada(userName, password);
+      console.log(retorno);
+      if (!retorno) {
+         alert('Usuário e/ou senha inválidos');
       }
     }
   };
@@ -47,7 +48,7 @@ export const Login = ({navigation}) => {
             placeholderTextColor={'#E8DEF8'}
             editable
             maxLength={40}
-            onChange={setUserName}
+            onChangeText={setUserName}
             value={userName}
           />
           <TextInput
@@ -58,7 +59,7 @@ export const Login = ({navigation}) => {
             editable
             maxLength={40}
             secureTextEntry={true}
-            onChange={setPassword}
+            onChangeText={setPassword}
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>

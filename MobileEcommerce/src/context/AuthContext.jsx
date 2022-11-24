@@ -7,15 +7,17 @@ const AuthContext = createContext();
 
 export const verificaEstaParada = async (userName, password) => {
     
-  console.log(password + " / " + userName)
-    //  const teste = await getLogin();
-    //  const verific = teste.data;
-    //   verific.forEach((acesso)=>{
-    //     if(loginInserido == acesso.login && senhaInserida == acesso.senha) {
-    //       console.log("foi")  
-    //       return true;
-    //     }
-    // })
+     const login = await getLogin();
+     const verific = login.data;
+     let retorno = false;
+      verific.forEach((acesso)=>{
+        console.log("a")
+        if(userName == acesso.login && password == acesso.senha) {
+          console.log("foi")  
+          retorno = true;
+        }
+    })
+    return retorno;
   };
 
 export const AuthProvider = ({children}) => {
@@ -31,8 +33,8 @@ export const AuthProvider = ({children}) => {
       await AsyncStorage.setItem('@app_user', JSON.stringify(response.user));
       await AsyncStorage.setItem('@app_token', response.token);
     }
-  };
 
+  };
   useEffect(() => {
     const verificaStorage = async () => {
       const userStorage = await AsyncStorage.getItem('@app_user');
