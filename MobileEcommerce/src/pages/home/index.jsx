@@ -1,4 +1,4 @@
-import { Text, StatusBar, StyleSheet, ScrollView, View, Image, FlatList, SafeAreaView, ImageBackground } from "react-native"
+import { Text, StatusBar, StyleSheet, ScrollView, View, Image, FlatList, SafeAreaView, ImageBackground, TouchableOpacity } from "react-native"
 import React from "react"
 import CardHome from "../../components/CardHome/cardHome"
 import { CardCategoria } from "../../components/CardCategoria"
@@ -33,13 +33,13 @@ export const Home = ({navigation})=>{
                 source={require('../../images/texturaFundo.png')}
                 style={styles.imageBackground}>
                 
-                <View style={styles.banner}>
+                <TouchableOpacity style={styles.banner} onPress={()=> {console.log('direcionarrr')}}>
                     <View style={{flexDirection: 'column', justifyContent: 'center', padding:12}}>
                         <Text style={styles.textoBanner}>Ganhe</Text>
-                        <Text style={styles.textoBanner}>até 20% off</Text>
+                        <Text style={styles.textoBanner}>20% off</Text>
                     </View>
                     <Image style={{width: 120, height:120}}source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigbXuQd0qPA4daOcE_WJmFSVY_56PqygHX-mDkgrwRTZJT0rxmjg9fq912j_Bgp-cM8A&usqp=CAU'}}/>
-                </View>
+                </TouchableOpacity>
             
             <View>
                 <CardCategoria/>
@@ -144,7 +144,7 @@ export const Home = ({navigation})=>{
         textoBanner: {
             padding: 6,
             color: '#000000',
-            fontSize: 26,
+            fontSize: 32,
             fontWeight: '800',
             textShadowColor: 'lightgrey',
             textShadowOffset: {width: 6, height: 5},
