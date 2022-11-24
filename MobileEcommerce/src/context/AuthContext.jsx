@@ -5,16 +5,17 @@ import {getLogin} from '../services/taskClient.js';
 
 const AuthContext = createContext();
 
-export const verificaEstaParada = async (loginInserido, senhaInserida) => {
-     const teste = await getLogin();
-     const verific = teste.data;
-      verific.forEach((acesso)=>{
-      console.log("aqui")  
-        console.log(acesso)
-        if(loginInserido == acesso.login && senhaInserida == acesso.senha) {
-            alert("Biruleibe")
-        }
-    })
+export const verificaEstaParada = async (userName, password) => {
+    
+  console.log(password + " / " + userName)
+    //  const teste = await getLogin();
+    //  const verific = teste.data;
+    //   verific.forEach((acesso)=>{
+    //     if(loginInserido == acesso.login && senhaInserida == acesso.senha) {
+    //       console.log("foi")  
+    //       return true;
+    //     }
+    // })
   };
 
 export const AuthProvider = ({children}) => {
