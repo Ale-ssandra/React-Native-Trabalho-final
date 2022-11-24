@@ -8,6 +8,7 @@ import {
   Image,
 } from 'react-native';
 import {styles} from './styles.js';
+import { adicionarCarrinho } from '../../context/AuthContext';
 
 export const Card = ({ item }) => {
   const [qtd, setQtd] = useState(1);
@@ -44,8 +45,7 @@ export const Card = ({ item }) => {
           }}
           style={{
             width: 60.62,
-            height: 36.93,
-            resizeMode: 'contain'
+            height: 36.93
           }}
         />
         <Text style={styles.texto}>R$ {item.preco}</Text>

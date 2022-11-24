@@ -5,7 +5,7 @@ import { styles } from "./styles"
 
 
 
-const CardHome = ({ item }) => {
+const CardProdutos = ({ item }) => {
     const navigation = useNavigation();
    
     return(
@@ -22,4 +22,4 @@ const CardHome = ({ item }) => {
     )  
 }
 
-export default CardHome;
+export default CardProdutos;

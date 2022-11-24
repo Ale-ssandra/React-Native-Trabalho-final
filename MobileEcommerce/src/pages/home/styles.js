@@ -14,16 +14,20 @@ export const styles = StyleSheet.create({
     backgroundColor: '#272626',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
     alignItems: 'flex-end',
     width: '100%',
-    height: '12%',
+    height: '14%',
+  },
+  logo:{
+    left: 10,
+    height: 100,
+    width: 100,
   },
   banner: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFBFE',
+    backgroundColor: '#302d38',
     width: '76%',
     height: 168,
     marginStart: '14%',
@@ -44,9 +48,6 @@ export const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 32,
     fontWeight: '800',
-    textShadowColor: 'lightgrey',
-    textShadowOffset: {width: 6, height: 5},
-    textShadowRadius: 4,
   },
   textoNome: {
     color: '#000000',
@@ -83,4 +84,7 @@ export const styles = StyleSheet.create({
   flatbox: {
     height: 425,
   },
+  cardsProdutos:{
+    
+  }
 });

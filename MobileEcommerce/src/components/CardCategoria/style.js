@@ -1,36 +1,43 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-cardCategoria: {
+  cardCategoria: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
-    width: 130,
+    backgroundColor: '#302d38',
+    width: 'auto',
+    maxWidth: 150,
     height: 60,
     color: 'black',
     borderRadius: 50,
     marginHorizontal: 10,
     marginBottom: 15,
-    
- 
-},
-imgCategoria : {
+  },
+  imgCategoria: {
     width: 50,
     height: 50,
-    borderRadius: 80,    
-},
+    borderRadius: 80,
+  },
 
-image:{
-    width: 50,
-    height: 50,
-    borderRadius: '100%'
-},
-textoCategoria:{
+  image: {
+    width: '35%',
+    height: '100%',
+    resizeMode: 'contain',
+    borderRadius: 50,
+  },
+  imagem:{
+    width: '100%',
+    height: '60%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  textoCategoria: {
     color: '#000000',
     fontSize: 16,
-    fontWeight: "700",
-    textAlign: 'right'
-},
-})
+    fontWeight: '700',
+    textAlign: 'right',
+  },
+});

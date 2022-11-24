@@ -5,38 +5,29 @@ import {
   FlatList,
   ImageBackground,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
-import CardHome from '../../components/CardHome/cardHome';
+import React, { useContext} from 'react';
 import {CardCategoria} from '../../components/CardCategoria';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {styles} from './styles';
-import {getCategoria, getFood} from '../../services/taskClient';
+import AuthContext from '../../context/AuthContext';
+import CardProdutos from '../../components/CardProdutos';
 
 
 export const Home = ({navigation}) => {
-  const [categoria, setCategoria] = useState([]);
-  const [produtos, setProdutos] = useState([]);
+  const {produtos, categoria} = useContext(AuthContext)
   
   let i = 1;
 
-  useEffect(() => {
-    const pegaInformações = async () => {
-      const cats = await getCategoria();
-      const prods = await getFood();
-      setCategoria(cats.data);
-      setProdutos(prods);
-    }
-
-    pegaInformações();
-  }, []);
 
   return (
     <View style={styles.container}>
+      <StatusBar translucent={true} backgroundColor={'transparent'} />
       <View style={styles.header}>
-        <Text style={styles.texto}>Home</Text>
-        <Text style={styles.texto}>Logo</Text>
-        <Text style={styles.texto}>Loja</Text>
+        <View style={styles.logo}>
+        <Image source={require('../../images/Logo.png')} style={{height: '100%', width: '100%'}}/>
+        </View>
+        <Text style={styles.texto}>(Nome Usuario)</Text>
       </View>
 
       <ImageBackground
@@ -76,8 +67,9 @@ export const Home = ({navigation}) => {
             numColumns={2}
             data={produtos}
             keyExtractor={item => item.id}
+            style={styles.cardsProdutos}
             renderItem={({item}) => 
-            item.categoriaId == i ? <CardHome item={item} /> : null
+            item.categoriaId == i ? <CardProdutos item={item} /> : null
             } 
             />
             </View>

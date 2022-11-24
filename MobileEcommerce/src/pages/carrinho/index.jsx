@@ -11,23 +11,17 @@ import {useState, useEffect} from 'react';
 import {Card} from '../../components/Card/card.jsx';
 import {getFood} from '../../services/taskClient.js';
 import {styles} from './styles.js';
+import { adicionarCarrinho } from '../../context/AuthContext.jsx';
 
 export const Carrinho = ({navigation}) => {
   const [produtos, setProdutos] = useState([]);
   const [valorTotal, setValorTotal] = useState(0);
 
-  useEffect(() => {
-    const esperaEstaPorra = async () => {
-      const teste = await getFood();
-      setProdutos(teste);
-    };
-    esperaEstaPorra();
-  }, []);
 
-  const somaTotal = () => {
-    setValorTotal(valorTotal + (item.preco * qtd))
-  }
 
+  const somaTotal = (valorTotal, item) => {
+    setValorTotal(valorTotal + item.preco * qtd)
+  };
 
   return (
     <ImageBackground
@@ -44,7 +38,7 @@ export const Carrinho = ({navigation}) => {
       <FlatList
         data={produtos}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <Card item={item}/>}
+        renderItem={({item}) => <Card item={item} />}
       />
       <View style={styles.finalizar}>
         <TouchableOpacity style={styles.botao}>
