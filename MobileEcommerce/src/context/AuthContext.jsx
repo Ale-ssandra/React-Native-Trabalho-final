@@ -29,6 +29,7 @@ export const AuthProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
   const [produtos, setProdutos] = useState([]);
   const [categoria, setCategoria] = useState([]);
+  const [categoriaPesquisa, setCategoriaPesquisa] = useState(null);
   const [carrinho, setCarrinho] = useState([]);
 
   const loginContext = async () => {
@@ -77,7 +78,9 @@ export const AuthProvider = ({children}) => {
         verificaEstaParada,
         produtos : produtos,
         categoria : categoria,
-        adicionarCarrinho
+        adicionarCarrinho,
+        setCategoriaPesquisa: setCategoriaPesquisa,
+        categoriaPesquisa: categoriaPesquisa,
       }}>
       {children}
     </AuthContext.Provider>

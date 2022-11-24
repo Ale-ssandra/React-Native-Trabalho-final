@@ -49,6 +49,9 @@ export const styles = StyleSheet.create({
         borderLeftColor:'#FFFFFF',
         borderTopWidth: 1,
         borderLeftWidth: 1,
+        paddingBottom: 65
       },
-
+      cardsProdutos:{
+        padding: 10
+      }
  });

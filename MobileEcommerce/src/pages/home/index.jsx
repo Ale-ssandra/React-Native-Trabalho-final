@@ -69,7 +69,7 @@ export const Home = ({navigation}) => {
             keyExtractor={item => item.id}
             style={styles.cardsProdutos}
             renderItem={({item}) => 
-            item.categoriaId == i ? <CardProdutos item={item} /> : null
+            item.categoriaId == i ? <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View> : null
             } 
             />
             </View>

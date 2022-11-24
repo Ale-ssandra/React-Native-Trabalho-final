@@ -83,8 +83,11 @@ export const styles = StyleSheet.create({
   },
   flatbox: {
     height: 425,
+    display: 'flex',  
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cardsProdutos:{
-    
+    padding: 5
   }
 });

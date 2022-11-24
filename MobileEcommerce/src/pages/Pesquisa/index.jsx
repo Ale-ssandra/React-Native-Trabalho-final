@@ -4,17 +4,24 @@ import { styles } from "./style"
 import AuthContext from "../../context/AuthContext"
 import CardProdutos from "../../components/CardProdutos"
 
-export const Pesquisa =({navigation})=>{
+export const Pesquisa =(item)=>{
     
-    const {produtos, categoria} = useContext(AuthContext)
+    const {produtos, categoriaPesquisa, setCategoriaPesquisa} = useContext(AuthContext)
     const [pesquisa, setPesquisa] = useState(" ")
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
    
-   
    useEffect(() => {
-       setProdutosFiltrados(produtos.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))
-   }, [pesquisa])
+        setProdutosFiltrados(produtosFiltrados.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))   
+    
+}, [pesquisa]);
 
+    useEffect(()=>{
+        if(categoriaPesquisa != null){
+            setProdutosFiltrados(produtos.filter(produto => produto.categoriaId == categoriaPesquisa.id))
+        }  else{
+            setProdutosFiltrados(produtos);
+        }
+    } ,[categoriaPesquisa]); //])
    
     return(
         <View style={styles.container}>
@@ -24,7 +31,7 @@ export const Pesquisa =({navigation})=>{
             </View>
             <View style={styles.boxFiltros}>
                 <Text style={styles.textInput}>Pesquisa: </Text>
-                <Text style={styles.textInput}>(Filtros Ativos) </Text>
+                <Text style={styles.textInput} onPress={() => setCategoriaPesquisa(null)}>(Filtros Ativos) </Text>
             </View>
             <ImageBackground
         imageStyle={{opacity: 0.08}}
@@ -35,7 +42,7 @@ export const Pesquisa =({navigation})=>{
             data={produtosFiltrados}
             keyExtractor={item => item.id}
             renderItem={({item}) => 
-                <CardProdutos item={item} />
+            <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
             } 
             />
 

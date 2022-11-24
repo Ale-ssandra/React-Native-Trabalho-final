@@ -8,13 +8,16 @@ import {
   Image,
 } from 'react-native';
 import {styles} from './styles.js';
-import { adicionarCarrinho } from '../../context/AuthContext';
+import { mandarParaCarrinho } from '../../pages/produto/'
 
-export const Card = ({ item }) => {
-  const [qtd, setQtd] = useState(1);
+export const Card = ({ route, qtdProduto }) => {
+  const [qtd, setQtd] = useState(qtdProduto);
 
+  console.log(route.params.preco)
+  
   const adicionar = () => {
-    setQtd(qtd + 1);
+    setQtd(qtdProduto + 1);
+    setValor((qtd + 1) * route.params.preco)
   };
 
   const subtrair = () => {

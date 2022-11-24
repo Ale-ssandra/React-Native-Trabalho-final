@@ -13,22 +13,29 @@ import {styles} from './styles.js';
 const image = {
   uri: 'https://img.elo7.com.br/product/zoom/37C1703/papel-de-parede-adesivo-hamburgueria-preto.jpg',
 };
-
-export const Produto = ({navigation}) => {
-  const [qtd, setQtd] = useState(1);
-  const [valor, setValor] = useState(30);
+;
+export const Produto = ({navigation, route}) => {
+  const [qtdProduto, setqtdProduto] = useState(1);
+  const [valor, setValor] = useState(route.params.preco);
 
   const adicionar = () => {
-    setQtd(qtd + 1);
+    setqtdProduto(qtdProduto + 1);
+    setValor((qtdProduto + 1) * route.params.preco)
   };
 
   const subtrair = () => {
-    if (qtd == 1) {
+    if (qtdProduto == 1) {
       alert('Quantidade não pode ser zero');
     } else {
-      setQtd(qtd - 1);
+      setqtdProduto(qtdProduto - 1);
+      setValor((qtdProduto - 1)* route.params.preco);
     }
   };
+
+  const mandarParaCarrinho = () => {
+    route.params.preco = valor;
+    navigation.navigate('Carrinho', route, qtdProduto)
+  }
 
   return (
     <ImageBackground
@@ -46,7 +53,7 @@ export const Produto = ({navigation}) => {
             style={styles.image}>
             <Image
               source={{
-                uri: 'https://www.imagensempng.com.br/wp-content/uploads/2022/09/Lamborghini-Amarela-Png-300x300.png',
+                uri: route.params.foto
               }}
               style={styles.produto}
             />
@@ -58,11 +65,11 @@ export const Produto = ({navigation}) => {
         <View style={styles.informacao}>
           <View style={styles.viewTexto}>
             <View style={styles.texto1espaco}>
-              <Text style={styles.texto1}>X - Beacon</Text>
+              <Text style={styles.texto1}>{route.params.nome}</Text>
             </View>
             <View style={styles.texto2espaco}>
               <Text style={styles.texto2}>
-                Melhor lanche que alguém já comeu.? tu é mano?..
+                {route.params.descricao}
               </Text>
             </View>
           </View>
@@ -76,7 +83,7 @@ export const Produto = ({navigation}) => {
                 />
               </TouchableOpacity>
 
-              <Text style={styles.quantidade1} >{qtd}</Text>
+              <Text style={styles.quantidade1} >{qtdProduto}</Text>
 
               <TouchableOpacity onPress={adicionar}>
                 <Image
@@ -85,7 +92,7 @@ export const Produto = ({navigation}) => {
                 />
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.valor}>
+            <TouchableOpacity style={styles.valor} onPress={() => mandarParaCarrinho()}>
               <Text style={styles.textoValor1}>Add no carrinho</Text>
               <Text style={styles.textoValor2}>R$ {valor}</Text>
             </TouchableOpacity>
