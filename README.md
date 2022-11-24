@@ -21,6 +21,8 @@ Quer pedir sua comida preferida no conforto da sua casa?<b>
 
 ## Autores
 
+| [<img src="https://avatars.githubusercontent.com/u/110867246?v=4" width=115><br><sub>Gabriel Pinheiro</sub>](https://github.com/BilPinheiro) | [<img src="https://avatars.githubusercontent.com/u/102622495?v=4" width=115><br><sub>Erick Viana</sub>](https://github.com/ErickNotFound) |  [<img src="https://avatars.githubusercontent.com/u/96076314?v=4" width=115><br><sub>Alessandra Pinheiro</sub>](https://github.com/Ale-ssandra) |  [<img src="https://avatars.githubusercontent.com/u/80910617?v=4" width=115><br><sub>José Pedro</sub>](https://github.com/J-Pedr0) |  [<img src="https://avatars.githubusercontent.com/u/110869515?v=4"  width="115"/><br><sub>Thaisa Muniz</sub>](https://github.com/thaisamuniz89) |  
+| :---: | :---: | :---: | :---: | :---: |
 
 
 
