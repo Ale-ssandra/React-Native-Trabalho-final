@@ -69,7 +69,7 @@ export const Home = ({navigation}) => {
           <FlatList
             data={categoria}
             keyExtractor={item => item.id}
-            renderItem={(item) => <CardCategoria item={item} />} 
+            renderItem={(item) => <CardCategoria item={item.item} />} 
             horizontal={true} style={{marginBottom: 5}}
           />
         <FlatList

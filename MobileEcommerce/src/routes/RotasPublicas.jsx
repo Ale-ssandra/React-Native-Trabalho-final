@@ -11,6 +11,26 @@ import {Produto} from '../pages/produto';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+export const HomeStack = () => {
+ return( <Stack.Navigator >
+    <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+
+    <Stack.Screen name="Produto" component={Produto} options={{ title: "Nome Produto", headerShown: true}} />
+  </Stack.Navigator>
+ );
+}
+export const SearchStack = () => {
+ return( <Stack.Navigator >
+    <Stack.Screen name="Pesquisa" component={Pesquisa} options={{headerShown: false}} />
+
+    <Stack.Screen name="Produto" component={Produto} options={{ title: "Nome Produto", headerShown: true}} />
+  </Stack.Navigator>
+ );
+}
+
+
+
+
 export const RotasPublicas = () => {
   return (
     <Tab.Navigator
@@ -32,8 +52,8 @@ export const RotasPublicas = () => {
         ],
       }}>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={HomeStack}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -60,8 +80,8 @@ export const RotasPublicas = () => {
         }}
       />
       <Tab.Screen
-        name="Pesquisa"
-        component={Produto}
+        name="PesquisaStack"
+        component={SearchStack}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (

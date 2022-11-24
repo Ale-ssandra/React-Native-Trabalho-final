@@ -9,7 +9,7 @@ const CardHome = ({ item }) => {
     const navigation = useNavigation();
    
     return(
-        <TouchableOpacity  style={styles.taskContainer}>
+        <TouchableOpacity  style={styles.taskContainer} onPress={() => navigation.navigate('Produto', item) }>
            <View style={styles.imagem}>
             <Image style={styles.imagem2} source={{uri: item.foto}} />
            </View>
