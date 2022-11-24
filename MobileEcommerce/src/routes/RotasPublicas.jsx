@@ -1,11 +1,14 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login} from '../pages/Login/index';
+import {Login} from '../pages/Login';
 import {Home} from '../pages/Home';
 import {Carrinho} from '../pages/Carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
 import {Colaboradores} from '../pages/Colaboradores';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d700fab629606b63caa7a1f0af24e338361c636
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {Produto} from '../pages/produto';
 
@@ -34,7 +37,7 @@ export const RotasPublicas = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Carrinho}
+        component={Home}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
