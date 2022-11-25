@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
-import { Text, View, Image,TouchableOpacity,ImageBackground, StatusBar } from "react-native";
+import React, { useContext, useState } from "react";
+import { Text, View, Image,TouchableOpacity,ImageBackground, StatusBar ,useEffect } from "react-native";
 import AuthContext from "../../context/AuthContext";
 import { styles } from "./style";
+import { getLogin } from "../../services/taskClient";
 
 export const Usuario = () => {
     const { logoutContext } = useContext(AuthContext)
+    const [login, setLogin] = useState('')
 
-<<<<<<< HEAD
-        <Text  onPress={logoutContext}>
-           DESISTIR
-        </Text>
-=======
->>>>>>> d5d52bcc6880c444301ce5b26215cd21cfed4a6d
+    const nomeUsuario = async () => {
+        const newUsuario = await getLogin();
+        setLogin(newUsuario);
+      };
+    
 
     return (
         <ImageBackground
@@ -26,10 +27,10 @@ export const Usuario = () => {
 
                 <Image style={styles.perfil} source={require('../../images/user.png')}>
                 </Image>
-                <Text style={styles.nome}>Nome</Text>
+                <Text style={styles.nome}>{login.nome}</Text>
             </View>
             <View style={styles.boxSair}>
-                <TouchableOpacity style={styles.botaoSair}>
+                <TouchableOpacity style={styles.botaoSair} onPress = {()=> logoutContext()}>
             
                     <Text style={styles.textoSair}>Sair</Text>
                    
