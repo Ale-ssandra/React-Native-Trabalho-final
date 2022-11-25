@@ -5,14 +5,6 @@ import { styles } from "./style";
 
 export const Usuario = () => {
     const { logoutContext } = useContext(AuthContext)
-
-<<<<<<< HEAD
-        <Text  onPress={logoutContext}>
-           DESISTIR
-        </Text>
-=======
->>>>>>> d5d52bcc6880c444301ce5b26215cd21cfed4a6d
-
     return (
         <ImageBackground
         source={{
@@ -29,7 +21,7 @@ export const Usuario = () => {
                 <Text style={styles.nome}>Nome</Text>
             </View>
             <View style={styles.boxSair}>
-                <TouchableOpacity style={styles.botaoSair}>
+                <TouchableOpacity style={styles.botaoSair} onPress={() => logoutContext()}>
             
                     <Text style={styles.textoSair}>Sair</Text>
                    
