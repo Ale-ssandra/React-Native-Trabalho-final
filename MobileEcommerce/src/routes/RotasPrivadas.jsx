@@ -1,7 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Home} from '../pages/Home';
-import {Carrinho} from '../pages/Carrinho';
+import {Home} from '../pages/home/index';
+import {Carrinho} from '../pages/carrinho';
 import {Pesquisa} from '../pages/Pesquisa';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {Produto} from '../pages/produto';

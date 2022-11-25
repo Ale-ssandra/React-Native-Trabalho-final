@@ -8,7 +8,7 @@ import {
   Image,
 } from 'react-native';
 import {styles} from './styles.js';
-import { mandarParaCarrinho } from '../../pages/produto/'
+import { mandarParaCarrinho } from '../../pages/produto'
 
 export const Card = ({ route, qtdProduto }) => {
   const [qtd, setQtd] = useState(qtdProduto);
