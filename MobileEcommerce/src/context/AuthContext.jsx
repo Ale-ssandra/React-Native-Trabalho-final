@@ -30,7 +30,6 @@ export const AuthProvider = ({children}) => {
   const [categoria, setCategoria] = useState([]);
   const [categoriaPesquisa, setCategoriaPesquisa] = useState(null);
   const [carrinho, setCarrinho] = useState([]);
-  const [produtoEscolido, setProdutoEscolido] = useState(null);
 
   const loginContext = async () => {
     // if (response.token && response.user) {
@@ -41,6 +40,17 @@ export const AuthProvider = ({children}) => {
     // }
     setUser("teste")
   };
+  const adicionaCarrinho = (item) =>{
+    const id = carrinho.length + 1;
+    const prod = `{ "id": ${id}, `+  item     
+    carrinho.push(prod); 
+    console.log(carrinho)
+  }
+
+  const zeraCarrinho = () =>{
+     setCarrinho([]);
+  }
+
   useEffect(() => {
     const verificaStorage = async () => {
       const userStorage = await AsyncStorage.getItem('@app_user');
@@ -78,11 +88,12 @@ export const AuthProvider = ({children}) => {
         verificaEstaParada,
         produtos : produtos,
         categoria : categoria,
-        adicionarCarrinho,
+        carrinho : carrinho,
+        adicionaCarrinho,
+        zeraCarrinho,
         setCategoriaPesquisa: setCategoriaPesquisa,
+
         categoriaPesquisa: categoriaPesquisa,
-        setProdutoEscolido: setProdutoEscolido,
-        produtoEscolido: produtoEscolido,
       }}>
       {children}
     </AuthContext.Provider>

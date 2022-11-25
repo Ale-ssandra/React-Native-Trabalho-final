@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -7,20 +7,21 @@ import {
   StatusBar,
   FlatList,
 } from 'react-native';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {Card} from '../../components/Card/card.jsx';
-import {getFood} from '../../services/taskClient.js';
 import {styles} from './styles.js';
-import { adicionarCarrinho } from '../../context/AuthContext.jsx';
+import AuthContext from '../../context/AuthContext.jsx';
 
 export const Carrinho = ({navigation}) => {
-  const [produtos, setProdutos] = useState([]);
   const [valorTotal, setValorTotal] = useState(0);
+  const {zeraCarrinho, carrinho} = useContext(AuthContext)
 
 
-  const somaTotal = (valorTotal, item) => {
-    setValorTotal(valorTotal + item.preco * qtd)
-  };
+  const teste = () => {
+  carrinho.forEach(item => {
+  console.log(item.nome)
+  })
+  }
 
   return (
     <ImageBackground
@@ -34,13 +35,13 @@ export const Carrinho = ({navigation}) => {
         <Text style={styles.texto}>Carrinho</Text>
         <Text style={styles.texto}>R$ {valorTotal}</Text>
       </View>
-      <FlatList
-        data={produtos}
+      {/* <FlatList
+        data={carrinho}
         keyExtractor={item => item.id}
         renderItem={({item}) => <Card item={item} />}
-      />
+      /> */}
       <View style={styles.finalizar}>
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={() => teste()}>
           <Text style={styles.botaoTexto}>Finalizar compra</Text>
         </TouchableOpacity>
       </View>

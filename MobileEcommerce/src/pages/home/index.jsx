@@ -18,7 +18,6 @@ export const Home = ({navigation}) => {
   const {produtos, categoria} = useContext(AuthContext)
   
 
-
   return (
     <View style={styles.container}>
       <StatusBar translucent={true} backgroundColor={'transparent'} />

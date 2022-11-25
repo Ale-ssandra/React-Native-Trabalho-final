@@ -10,7 +10,7 @@ export const Usuario = () => {
         <View style={{flex: 1, display:'flex', justifyContent: 'center', alignItems: 'center'}}>
 
         <Text  onPress={logoutContext}>
-           SAIR
+           DESISTIR
         </Text>
 
         </View>
