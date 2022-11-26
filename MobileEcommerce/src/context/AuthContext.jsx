@@ -41,9 +41,8 @@ export const AuthProvider = ({children}) => {
     setUser("teste")
   };
   const adicionaCarrinho = (item) =>{
-    const id = carrinho.length + 1;
-    const prod = `{ "id": ${id}, `+  item     
-    carrinho.push(prod); 
+    const id = carrinho.length + 1;   
+    setCarrinho([...carrinho ,{...item, id: id}]); 
     console.log(carrinho)
   }
 
@@ -92,7 +91,6 @@ export const AuthProvider = ({children}) => {
         adicionaCarrinho,
         zeraCarrinho,
         setCategoriaPesquisa: setCategoriaPesquisa,
-
         categoriaPesquisa: categoriaPesquisa,
       }}>
       {children}
