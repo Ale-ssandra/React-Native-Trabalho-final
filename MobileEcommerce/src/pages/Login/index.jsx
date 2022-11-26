@@ -12,8 +12,8 @@ import {styles} from './styles';
 import AuthContext from '../../context/AuthContext';
 
 export const Login = ({navigation}) => {
-  const [userName, setUserName] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   const { loginContext } = useContext(AuthContext)
 
   
@@ -21,12 +21,14 @@ export const Login = ({navigation}) => {
   
   
   const verificacaoLogin = async () => {
-    if (userName != null || password != null) {
+    
+     if(userName != ""  && password != ""){
       const retorno = await loginContext(userName, password);
-      if (!retorno) {
-         alert('Usuário e/ou senha inválidos');
-      }
-    }
+      if (retorno) {
+        alert('Login ou senha invalidos');
+       }
+    }else alert("Campo em branco")
+    
   };
 
   return (

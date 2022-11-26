@@ -27,11 +27,14 @@ export const AuthProvider = ({children}) => {
   const loginContext = async (userName, password) => {
     const login = await getLogin();
     const verific = login.data;
+    const retorno = false
     verific.forEach(acesso => {
       if (userName == acesso.login && password == acesso.senha) {
         setUser(acesso)
         armazenaUsuario(acesso);
+        return true;
       }});
+      return retorno;
     };
 
     const armazenaUsuario = async (user) => {

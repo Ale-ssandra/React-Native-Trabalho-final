@@ -17,12 +17,9 @@ export const Pesquisa =()=>{
 
 
     useEffect(() =>{
-        
         setProdutosFiltrados(controleFiltro.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))  
     },[pesquisa])
  
-
-
     useEffect(() =>{
         if(categoriaPesquisa != null){
             setProdutosFiltrados(produtos.filter(produto => produto.categoriaId == categoriaPesquisa.id));
