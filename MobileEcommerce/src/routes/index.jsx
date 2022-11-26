@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
-import { Load } from '../pages/Load';
+import { Load } from '../pages/Load/index';
 import  { RotasPrivadas }  from './RotasPrivadas';
 import { RotasPublicas } from './RotasPublicas';
 

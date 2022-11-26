@@ -3,13 +3,13 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
-    backgroundColor: '#1C1B1F',
+    backgroundColor: '#0e0c24',
     alignItems: 'center',
     paddingBottom: 128,
   },
   header: {
     flexDirection: 'row',
-    backgroundColor: '#272626',
+    backgroundColor: '#6f0d26',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     width: '100%',
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   botao: {
     width: 206,
     height: 48,
-    backgroundColor: '#EE6B22',
+    backgroundColor: '#8f0d27',
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',

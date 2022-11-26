@@ -3,7 +3,7 @@ export const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#1C1B1F',
+        backgroundColor: '#0e0c24',
         justifyContent: 'space-evenly',
         alignItems: 'center',
     },
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     box: {
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: '#302d38',
+        backgroundColor: '#8f0d27 ',
         width: '60%',
         height: '40%',
         borderRadius: 50,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     botaoSair: {
         width: 150,
         height: 50,
-        backgroundColor: '#EE6B22',
+        backgroundColor: '#8f0d27',
         borderRadius: 25,
         justifyContent: 'center',
         alignItems: 'center',

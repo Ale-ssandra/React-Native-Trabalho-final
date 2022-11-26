@@ -7,15 +7,7 @@ const AuthContext = createContext();
 
 
 export const verificaEstaParada = async (userName, password) => {
-  const login = await getLogin();
-  const verific = login.data;
-  let retorno = false;
-  verific.forEach(acesso => {
-    console.log('a');
-    if (userName == acesso.login && password == acesso.senha) {
-      console.log('foi');
-    }
-  });
+ 
   return retorno; 
 };
 
@@ -30,20 +22,28 @@ export const AuthProvider = ({children}) => {
   const [categoria, setCategoria] = useState([]);
   const [categoriaPesquisa, setCategoriaPesquisa] = useState(null);
   const [carrinho, setCarrinho] = useState([]);
-
-  const loginContext = async () => {
-    // if (response.token && response.user) {
-    //   setUser(response.user);
-    //   api.defaults.headers['Authorization'] = `Bearer ${response.token}`;
-    //   await AsyncStorage.setItem('@app_user', JSON.stringify(response.user));
-    //   await AsyncStorage.setItem('@app_token', response.token);
-    // }
-    setUser("teste")
-  };
-  const adicionaCarrinho = (item) =>{
+  
+  const loginContext = async (userName, password ) => {
+    const login = await getLogin();
+    const verific = login.data;
+    let retorno = false;
+    verific.forEach(acesso => {
+      if (userName == acesso.login && password == acesso.senha) {
+        setUser(acesso)
+        armazenaUsuario(acesso);
+      }});
+    };
+    const armazenaUsuario = async (user) => {
+       await AsyncStorage.setItem("@app_user", JSON.stringify(user))
+    };
+    const logoutContext = () => {
+      setUser(null);
+      AsyncStorage.clear();
+    };
+    
+  const adicionaCarrinho = async (item) =>{
     const id = carrinho.length + 1;   
     setCarrinho([...carrinho ,{...item, id: id}]); 
-    console.log(carrinho)
   }
 
   const zeraCarrinho = () =>{
@@ -52,14 +52,11 @@ export const AuthProvider = ({children}) => {
 
   useEffect(() => {
     const verificaStorage = async () => {
-      const userStorage = await AsyncStorage.getItem('@app_user');
-      const tokenStorage = await AsyncStorage.getItem('@app_token');
-
-      if (userStorage != null && tokenStorage != null) {
-        setUser(JSON.parse(userStorage));
-        api.defaults.headers['Authorization'] = `Bearer ${tokenStorage}`;
-      }
-      await new Promise(resolve => setTimeout(resolve, 1000));
+       const userStorage = await AsyncStorage.getItem('@app_user');
+       if (userStorage != null) {
+         setUser(userStorage);
+       }
+      await new Promise(resolve => setTimeout(resolve, 2000));
       setLoading(false);
     };
     const buscaBanco = async () => {
@@ -72,10 +69,6 @@ export const AuthProvider = ({children}) => {
     verificaStorage();
   }, []);
 
-  const logoutContext = () => {
-    setUser(null);
-    AsyncStorage.clear();
-  };
 
   return (
     <AuthContext.Provider
@@ -84,7 +77,6 @@ export const AuthProvider = ({children}) => {
         loginContext,
         logoutContext,
         loading: loading,
-        verificaEstaParada,
         produtos : produtos,
         categoria : categoria,
         carrinho : carrinho,
@@ -92,6 +84,7 @@ export const AuthProvider = ({children}) => {
         zeraCarrinho,
         setCategoriaPesquisa: setCategoriaPesquisa,
         categoriaPesquisa: categoriaPesquisa,
+        user: user,
       }}>
       {children}
     </AuthContext.Provider>

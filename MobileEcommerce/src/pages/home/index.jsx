@@ -15,9 +15,12 @@ import CardProdutos from '../../components/CardProdutos';
 
 
 export const Home = ({navigation}) => {
+<<<<<<< HEAD
   const {produtos, categoria, logado} = useContext(AuthContext)
+=======
+  const {produtos, categoria, logado, user} = useContext(AuthContext)
+>>>>>>> e14d6db66bba1d33096cf48cd7546d6fe023a409
   
-
   return (
     <View style={styles.container}>
       <StatusBar translucent={true} backgroundColor={'transparent'} />
@@ -25,7 +28,11 @@ export const Home = ({navigation}) => {
         <View style={styles.logo}>
         <Image source={require('../../images/Logo.png')} style={{height: '100%', width: '100%'}}/>
         </View>
+<<<<<<< HEAD
         {logado ? <Text style={styles.texto}>(Nome Usuario)</Text> : null}
+=======
+        {logado ? <Text style={styles.texto}>{user.nome}</Text> : null}
+>>>>>>> e14d6db66bba1d33096cf48cd7546d6fe023a409
       </View>
 
       <ImageBackground
@@ -47,7 +54,7 @@ export const Home = ({navigation}) => {
             <Text style={styles.textoBanner}>20% off</Text>
           </View>
           <Image
-            style={{width: 120, height: 120}}
+            style={{width: 120, height: 120, borderRadius:25}}
             source={{
               uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigbXuQd0qPA4daOcE_WJmFSVY_56PqygHX-mDkgrwRTZJT0rxmjg9fq912j_Bgp-cM8A&usqp=CAU',
             }}
@@ -58,6 +65,7 @@ export const Home = ({navigation}) => {
           <FlatList
             data={categoria}
             keyExtractor={item => item.id}
+            showsHorizontalScrollIndicator={false}
             renderItem={(item) => <CardCategoria item={item.item} />} 
             horizontal={true} style={{marginBottom: 5}}
           />
@@ -66,6 +74,7 @@ export const Home = ({navigation}) => {
             data={produtos}
             keyExtractor={item => item.id}
             style={styles.cardsProdutos}
+            showsVerticalScrollIndicator={false}
             renderItem={({item}) => 
             item.categoriaId == 1 ? <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View> : null
             } 

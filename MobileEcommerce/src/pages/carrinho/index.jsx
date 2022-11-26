@@ -12,16 +12,15 @@ import {Card} from '../../components/Card/card.jsx';
 import {styles} from './styles.js';
 import AuthContext from '../../context/AuthContext.jsx';
 
-export const Carrinho = ({navigation}) => {
-  const [valorTotal, setValorTotal] = useState(0);
+export const Carrinho = ({}) => {
+  const [valorTotal, setValorTotal] = useState(0)
   const {zeraCarrinho, carrinho} = useContext(AuthContext)
 
-
-  const teste = () => {
-  carrinho.forEach(item => {
-  console.log(item.nome)
-  })
-  }
+  useEffect(() => {
+    carrinho.forEach(element => {
+      setValorTotal(valorTotal + (element.quantidade * element.preco))
+    });
+  }, [carrinho])
 
   return (
     <ImageBackground
@@ -35,13 +34,13 @@ export const Carrinho = ({navigation}) => {
         <Text style={styles.texto}>Carrinho</Text>
         <Text style={styles.texto}>R$ {valorTotal}</Text>
       </View>
-      {/* <FlatList
+      <FlatList
         data={carrinho}
         keyExtractor={item => item.id}
         renderItem={({item}) => <Card item={item} />}
-      /> */}
+      />
       <View style={styles.finalizar}>
-        <TouchableOpacity style={styles.botao} onPress={() => teste()}>
+        <TouchableOpacity style={styles.botao} >
           <Text style={styles.botaoTexto}>Finalizar compra</Text>
         </TouchableOpacity>
       </View>
