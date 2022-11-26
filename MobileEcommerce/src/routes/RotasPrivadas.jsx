@@ -40,7 +40,7 @@ export const RotasPrivadas = () => {
             borderTopWidth: 0,
             position: 'absolute',
             height: 60,
-            backgroundColor: '#272626',
+            backgroundColor: '#2f0d26',
             borderRadius: 20,
             left: 5,
             right: 5,

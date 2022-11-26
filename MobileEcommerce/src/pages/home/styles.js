@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#0e0c24',
   },
   header: {
-    backgroundColor: '#2f0d26',
+    backgroundColor: '#0e0c24',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#2f0d26',
+    backgroundColor: '#8f0d27',
     width: '76%',
     height: 168,
     marginStart: '14%',

@@ -7,7 +7,6 @@ import { styles } from "./style";
 export const Usuario = () => {
     const { logoutContext , user } = useContext(AuthContext)
 
-
     return (
         <ImageBackground
         source={{
@@ -19,11 +18,9 @@ export const Usuario = () => {
 
             <View style={styles.box}>
 
-                <Image style={styles.perfil} source={{uri: item.foto}}>
+                <Image style={styles.perfil} source={require('../../images/user.png')}>
                 </Image>
                 <Text style={styles.nome}>{user.nome}</Text>
-                <Text style={styles.nome}>{user.login}</Text>
-                <Text style={styles.nome}>Código do cliente: {user.id*2345}</Text>
             </View>
             <View style={styles.boxSair}>
 
