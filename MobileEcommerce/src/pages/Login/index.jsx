@@ -64,7 +64,7 @@ export const Login = ({navigation}) => {
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>
-            <Text onPress={() => verificacaoLogin()} style={styles.buttonText}>
+            <Text onPress={() => loginContext()} style={styles.buttonText}>
               Entrar
             </Text>
           </TouchableOpacity>

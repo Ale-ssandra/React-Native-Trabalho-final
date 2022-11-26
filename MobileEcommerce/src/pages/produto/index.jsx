@@ -34,9 +34,10 @@ export const Produto = ({ navigation, route }) => {
 
   const mandarParaCarrinho = () => {
 
-    const item = `"preco":${route.params.preco}, "quantidade":${qtdProduto} , "nome":"${route.params.nome}", "foto": "${route.params.foto}" }`
-    adicionaCarrinho(item)
-
+   
+    const item = {preco: route.params.preco, quantidade:qtdProduto , nome: route.params.nome, foto: route.params.foto} ;
+    adicionaCarrinho(item) 
+  
   }
 
   return (

@@ -5,16 +5,35 @@ import AuthContext from "../../context/AuthContext"
 import CardProdutos from "../../components/CardProdutos"
 import { ButtonCategoria } from "../../components/ButtonCategoria"
 
-export const Pesquisa =(item)=>{
+export const Pesquisa =()=>{
     
-    const {produtos, categoriaPesquisa, setCategoriaPesquisa} = useContext(AuthContext)
-    const [pesquisa, setPesquisa] = useState(" ")
+    const {produtos, categoriaPesquisa} = useContext(AuthContext)
+    const [pesquisa, setPesquisa] = useState("")
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
+    const [controleFiltro, setControleFiltro] = useState([])
    
-   useEffect(() => {
-        setProdutosFiltrados(produtos.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))
-}, [pesquisa, categoriaPesquisa])
-   
+    
+    
+
+
+    useEffect(() =>{
+        
+        setProdutosFiltrados(controleFiltro.filter(produto => produto.nome.toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1))  
+    },[pesquisa])
+ 
+
+
+    useEffect(() =>{
+        if(categoriaPesquisa != null){
+            setProdutosFiltrados(produtos.filter(produto => produto.categoriaId == categoriaPesquisa.id));
+            setControleFiltro(produtos.filter(produto => produto.categoriaId == categoriaPesquisa.id));
+       }
+        else {
+            setProdutosFiltrados(produtos);
+            setControleFiltro(produtos);
+        }
+    },[categoriaPesquisa])
+
     return(
         <View style={styles.container}>
             <View style={styles.containerPesquisa}>
@@ -23,7 +42,7 @@ export const Pesquisa =(item)=>{
             </View>
             <View style={styles.boxFiltros}>
                 <Text style={styles.textInput}>Pesquisa: </Text>
-                <ButtonCategoria />
+                {categoriaPesquisa != null ? <ButtonCategoria /> : null}
             </View>
             <ImageBackground
         imageStyle={{opacity: 0.08}}
@@ -34,15 +53,10 @@ export const Pesquisa =(item)=>{
             numColumns={2}
             keyExtractor={item => item.id}
             renderItem={({item}) => {
-                if(categoriaPesquisa != null){
-                    if(item.categoriaId == categoriaPesquisa.id){
-                      return <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
-                    }
-                }else return <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
+               return <View style={styles.cardsProdutos}><CardProdutos item={item}  /></View>
             }
             } 
             />
-
         </ImageBackground>
 
         </View>

@@ -7,7 +7,6 @@ import { styles } from "./styles"
 
 const CardProdutos = ({ item }) => {
     const navigation = useNavigation();
-   
     return(
         <TouchableOpacity  style={styles.taskContainer} onPress={() => navigation.navigate('Produto', item) }>
            <View style={styles.imagem}>

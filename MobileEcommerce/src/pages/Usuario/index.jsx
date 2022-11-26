@@ -13,8 +13,6 @@ export const Usuario = () => {
         const newUsuario = await getLogin();
         setLogin(newUsuario);
       };
-    
-
 
     return (
         <ImageBackground
@@ -33,7 +31,10 @@ export const Usuario = () => {
             </View>
             <View style={styles.boxSair}>
 
+
                 <TouchableOpacity style={styles.botaoSair} onPress={() => logoutContext()}>
+
+
             
                     <Text style={styles.textoSair}>Sair</Text>
                    
