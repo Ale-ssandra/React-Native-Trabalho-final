@@ -7,7 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { styles } from './styles.js';
 import AuthContext from '../../context/AuthContext.jsx';
 const image = {
@@ -17,7 +17,7 @@ const image = {
 export const Produto = ({ navigation, route }) => {
   const [qtdProduto, setqtdProduto] = useState(1);
   const [valor, setValor] = useState(route.params.preco);
-  const { adicionaCarrinho } = useContext(AuthContext)
+  const { adicionaCarrinho , user} = useContext(AuthContext)
 
   const adicionar = () => {
     setqtdProduto(qtdProduto + 1);
@@ -40,7 +40,9 @@ export const Produto = ({ navigation, route }) => {
     adicionaCarrinho(item) 
   
   }
-
+useEffect(() =>{
+  navigation.setOptions({ title: route.params.nome , headerStyle:{backgroundColor: "#6f0d26"}, headerTintColor: '#FFFFFF'})
+},[])
   return (
     <ImageBackground
       source={{
@@ -99,7 +101,7 @@ export const Produto = ({ navigation, route }) => {
                 />
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.valor} onPress={() => mandarParaCarrinho()}>
+            <TouchableOpacity style={styles.valor} onPress={() => user ? mandarParaCarrinho() : navigation.navigate('Login')}>
               <Text style={styles.textoValor1}>Add no carrinho</Text>
               <Text style={styles.textoValor2}>R$ {valor}</Text>
             </TouchableOpacity>

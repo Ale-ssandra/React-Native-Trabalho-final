@@ -63,12 +63,12 @@ export const RotasPrivadas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#0e0c24' : 'white',
+                  tintColor: focused ? 'white' : '#6f0d26',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#0e0c24' : 'white',
+                  color: focused ? 'white' : '#6f0d26',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -91,12 +91,12 @@ export const RotasPrivadas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#0e0c24' : 'white',
+                  tintColor: focused ? 'white' : '#6f0d26',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#0e0c24' : 'white',
+                  color: focused ?'white' : '#6f0d26',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -119,12 +119,12 @@ export const RotasPrivadas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#0e0c24' : 'white',
+                  tintColor: focused ? 'white' :'#6f0d26',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#0e0c24' : 'white',
+                  color: focused ?'white' : '#6f0d26' ,
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -147,12 +147,12 @@ export const RotasPrivadas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#0e0c24' : 'white',
+                  tintColor: focused ? 'white' : '#6f0d26' ,
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#0e0c24' : 'white',
+                  color: focused ? 'white' :'#6f0d26' ,
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -168,7 +168,7 @@ export const RotasPrivadas = () => {
 
 const styles = StyleSheet.create({
   shadow: {
-    shadowColor: '#0e0c24',
+    shadowColor: '##6f0d26',
     shadowOffset: {
       width: 5,
       height: 0,

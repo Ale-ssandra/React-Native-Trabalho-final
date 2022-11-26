@@ -25,7 +25,7 @@ export const Usuario = () => {
             <View style={styles.boxSair}>
 
 
-                <TouchableOpacity style={styles.botaoSair} onPress={() => console.log(user.nome)}>
+                <TouchableOpacity style={styles.botaoSair} onPress={() => logoutContext()}>
 
 
             
