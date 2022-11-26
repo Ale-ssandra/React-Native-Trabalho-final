@@ -1,4 +1,4 @@
-import {RecyclerViewBackedScrollViewComponent, StatusBar} from 'react-native';
+import {StatusBar, ScrollView} from 'react-native';
 import {
   Text,
   View,
@@ -70,9 +70,12 @@ export const Produto = ({navigation, route}) => {
               <Text style={styles.texto1}>{route.params.nome}</Text>
             </View>
             <View style={styles.texto2espaco}>
+              <ScrollView>
               <Text style={styles.texto2}>
                 {route.params.descricao}
               </Text>
+              </ScrollView>
+
             </View>
           </View>
 

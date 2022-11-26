@@ -59,7 +59,7 @@ export const AuthProvider = ({children}) => {
         setUser(JSON.parse(userStorage));
         api.defaults.headers['Authorization'] = `Bearer ${tokenStorage}`;
       }
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setLoading(false);
     };
     const buscaBanco = async () => {
