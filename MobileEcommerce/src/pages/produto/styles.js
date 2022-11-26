@@ -3,12 +3,12 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
-    backgroundColor: '#1C1B1F',
+    backgroundColor: '#0e0c24',
     alignItems: 'center',
   },
     button: {
       alignItems: "center",
-      backgroundColor: "#DDDDDD",
+      backgroundColor: "#8f0d27",
       padding: 10
     },
     image: {
@@ -64,7 +64,7 @@ export const styles = StyleSheet.create({
     },
     texto1: {
       fontSize: 25,
-      color: "#272626",
+      color: "#6f0d26",
       marginLeft: 10,
     },
     texto2espaco: {
@@ -74,7 +74,7 @@ export const styles = StyleSheet.create({
     },
     texto2: {
       fontSize: 18,
-      color: "#272626",
+      color: "#6f0d26",
       marginLeft: 10,
     },
     viewCompra: {

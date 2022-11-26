@@ -1,4 +1,4 @@
-import {RecyclerViewBackedScrollViewComponent, StatusBar} from 'react-native';
+import { RecyclerViewBackedScrollViewComponent, StatusBar } from 'react-native';
 import {
   Text,
   View,
@@ -6,17 +6,17 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import {useContext, useState} from 'react';
-import {styles} from './styles.js';
+import { useContext, useState } from 'react';
+import { styles } from './styles.js';
 import AuthContext from '../../context/AuthContext.jsx';
 const image = {
   uri: 'https://img.elo7.com.br/product/zoom/37C1703/papel-de-parede-adesivo-hamburgueria-preto.jpg',
 };
 ;
-export const Produto = ({navigation, route}) => {
+export const Produto = ({ navigation, route }) => {
   const [qtdProduto, setqtdProduto] = useState(1);
   const [valor, setValor] = useState(route.params.preco);
-  const {adicionaCarrinho} = useContext(AuthContext)
+  const { adicionaCarrinho } = useContext(AuthContext)
 
   const adicionar = () => {
     setqtdProduto(qtdProduto + 1);
@@ -28,15 +28,15 @@ export const Produto = ({navigation, route}) => {
       alert('Quantidade não pode ser zero');
     } else {
       setqtdProduto(qtdProduto - 1);
-      setValor((qtdProduto - 1)* route.params.preco);
+      setValor((qtdProduto - 1) * route.params.preco);
     }
   };
 
   const mandarParaCarrinho = () => {
-   
+
     const item = `"preco":${route.params.preco}, "quantidade":${qtdProduto} , "nome":"${route.params.nome}", "foto": "${route.params.foto}" }`
-    adicionaCarrinho(item) 
-  
+    adicionaCarrinho(item)
+
   }
 
   return (
@@ -44,7 +44,7 @@ export const Produto = ({navigation, route}) => {
       source={{
         uri: 'https://cdn.discordapp.com/attachments/1006252680735363154/1044747356983263282/texturaFundo.png',
       }}
-      imageStyle={{opacity: 0.09}}
+      imageStyle={{ opacity: 0.09 }}
       style={styles.imageBackground}>
       <StatusBar translucent={true} backgroundColor={'transparent'} />
       <View style={styles.cont1}>

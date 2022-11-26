@@ -6,8 +6,7 @@ import { getLogin } from "../../services/taskClient";
 
 export const Usuario = () => {
     const { logoutContext } = useContext(AuthContext)
-<<<<<<< HEAD
-=======
+
     const [login, setLogin] = useState('')
 
     const nomeUsuario = async () => {
@@ -16,7 +15,7 @@ export const Usuario = () => {
       };
     
 
->>>>>>> 1870d1d3836a4040011c72cea4425b4b3a79ed44
+
     return (
         <ImageBackground
         source={{
@@ -33,11 +32,8 @@ export const Usuario = () => {
                 <Text style={styles.nome}>{login.nome}</Text>
             </View>
             <View style={styles.boxSair}>
-<<<<<<< HEAD
+
                 <TouchableOpacity style={styles.botaoSair} onPress={() => logoutContext()}>
-=======
-                <TouchableOpacity style={styles.botaoSair} onPress = {()=> logoutContext()}>
->>>>>>> 1870d1d3836a4040011c72cea4425b4b3a79ed44
             
                     <Text style={styles.textoSair}>Sair</Text>
                    

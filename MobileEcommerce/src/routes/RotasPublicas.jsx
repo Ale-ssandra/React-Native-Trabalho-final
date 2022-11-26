@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login} from '../pages/Login';
-import {Home} from '../pages/Home/index';
+import {Home} from '../pages/home/index';
 import {Pesquisa} from '../pages/Pesquisa';
-import {Colaboradores} from '../pages/Colaboradores';
+import {Colaboradores} from '../pages/colaboradores';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {Produto} from '../pages/produto';
 
