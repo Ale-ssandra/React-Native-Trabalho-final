@@ -15,7 +15,7 @@ import CardProdutos from '../../components/CardProdutos';
 
 
 export const Home = ({navigation}) => {
-  const {produtos, categoria} = useContext(AuthContext)
+  const {produtos, categoria, logado} = useContext(AuthContext)
   
 
   return (
@@ -25,7 +25,7 @@ export const Home = ({navigation}) => {
         <View style={styles.logo}>
         <Image source={require('../../images/Logo.png')} style={{height: '100%', width: '100%'}}/>
         </View>
-        <Text style={styles.texto}>(Nome Usuario)</Text>
+        {logado ? <Text style={styles.texto}>(Nome Usuario)</Text> : null}
       </View>
 
       <ImageBackground
