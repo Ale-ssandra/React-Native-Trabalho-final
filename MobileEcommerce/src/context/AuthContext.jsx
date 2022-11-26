@@ -22,17 +22,18 @@ export const AuthProvider = ({children}) => {
   const [categoria, setCategoria] = useState([]);
   const [categoriaPesquisa, setCategoriaPesquisa] = useState(null);
   const [carrinho, setCarrinho] = useState([]);
+  const [valorTotal, setValorTotal] = useState(0);
   
-  const loginContext = async (userName, password ) => {
+  const loginContext = async (userName, password) => {
     const login = await getLogin();
     const verific = login.data;
-    let retorno = false;
     verific.forEach(acesso => {
       if (userName == acesso.login && password == acesso.senha) {
         setUser(acesso)
         armazenaUsuario(acesso);
       }});
     };
+
     const armazenaUsuario = async (user) => {
        await AsyncStorage.setItem("@app_user", JSON.stringify(user))
     };
@@ -40,21 +41,38 @@ export const AuthProvider = ({children}) => {
       setUser(null);
       AsyncStorage.clear();
     };
-    
+  const calculaValorTotal = async () => {
+    let temp = 0;
+    await carrinho.map(element => {
+      temp = temp + (element.quantidade * element.preco);
+    });
+    setValorTotal(temp)
+    console.log(valorTotal)
+  }
+
   const adicionaCarrinho = async (item) =>{
     const id = carrinho.length + 1;   
-    setCarrinho([...carrinho ,{...item, id: id}]); 
+    await setCarrinho([...carrinho ,{...item, id: id}]); 
   }
 
   const zeraCarrinho = () =>{
      setCarrinho([]);
   }
 
+  const alteraQuantidade = (item, x) => {
+    const indice = carrinho.findIndex(produto => produto.id == item.id);
+    x == 1 ? carrinho[indice].quantidade += 1 : carrinho[indice].quantidade -= 1
+    calculaValorTotal();
+  }
+  useEffect(() => {
+    calculaValorTotal()
+  },[carrinho])
+
   useEffect(() => {
     const verificaStorage = async () => {
        const userStorage = await AsyncStorage.getItem('@app_user');
        if (userStorage != null) {
-         setUser(userStorage);
+         setUser(JSON.parse(userStorage));
        }
       await new Promise(resolve => setTimeout(resolve, 2000));
       setLoading(false);
@@ -85,6 +103,8 @@ export const AuthProvider = ({children}) => {
         setCategoriaPesquisa: setCategoriaPesquisa,
         categoriaPesquisa: categoriaPesquisa,
         user: user,
+        alteraQuantidade,
+        valorTotal: valorTotal,
       }}>
       {children}
     </AuthContext.Provider>

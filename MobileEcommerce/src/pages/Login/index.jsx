@@ -9,17 +9,20 @@ import {
 } from 'react-native';
 import React, {useContext, useState} from 'react';
 import {styles} from './styles';
-import AuthContext, {verificaEstaParada} from '../../context/AuthContext';
+import AuthContext from '../../context/AuthContext';
 
 export const Login = ({navigation}) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
   const { loginContext } = useContext(AuthContext)
 
+  
+  
+  
+  
   const verificacaoLogin = async () => {
     if (userName != null || password != null) {
-      const retorno = await verificaEstaParada(userName, password);
-      console.log(retorno);
+      const retorno = await loginContext(userName, password);
       if (!retorno) {
          alert('Usuário e/ou senha inválidos');
       }
@@ -64,7 +67,7 @@ export const Login = ({navigation}) => {
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>
-            <Text onPress={() => loginContext(userName, password)} style={styles.buttonText}>
+            <Text onPress={() => verificacaoLogin()} style={styles.buttonText}>
               Entrar
             </Text>
           </TouchableOpacity>

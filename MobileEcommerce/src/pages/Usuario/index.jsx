@@ -6,7 +6,7 @@ import { styles } from "./style";
 
 export const Usuario = () => {
     const { logoutContext , user } = useContext(AuthContext)
-
+    
     return (
         <ImageBackground
         source={{
@@ -18,14 +18,14 @@ export const Usuario = () => {
 
             <View style={styles.box}>
 
-                <Image style={styles.perfil} source={require('../../images/user.png')}>
+                <Image style={styles.perfil} source={{uri: user.fotinha}}>
                 </Image>
                 <Text style={styles.nome}>{user.nome}</Text>
             </View>
             <View style={styles.boxSair}>
 
 
-                <TouchableOpacity style={styles.botaoSair} onPress={() => logoutContext()}>
+                <TouchableOpacity style={styles.botaoSair} onPress={() => console.log(user.nome)}>
 
 
             

@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useContext, useState} from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -6,19 +6,22 @@ import {
   Image,
 } from 'react-native';
 import {styles} from './styles.js';
-import { mandarParaCarrinho } from '../../pages/produto'
+import { mandarParaCarrinho, } from '../../pages/produto'
+import AuthContext from '../../context/AuthContext.jsx';
 
 export const Card = ( {item} ) => {
+const {alteraQuantidade} = useContext(AuthContext)
+
 
   const adicionar = () => {
-    item.quantidade +=  1;
+    alteraQuantidade(item, 1)
   };
 
   const subtrair = () => {
     if (item.quantidade == 1) {
       alert('Quantidade não pode ser zero');
     } else {
-      item.quantidade -= 1;
+      alteraQuantidade(item, 0)
     }
   };
 

@@ -13,14 +13,13 @@ import {styles} from './styles.js';
 import AuthContext from '../../context/AuthContext.jsx';
 
 export const Carrinho = ({}) => {
-  const [valorTotal, setValorTotal] = useState(0)
-  const {zeraCarrinho, carrinho} = useContext(AuthContext)
+
+  const {zeraCarrinho, carrinho, valorTotal} = useContext(AuthContext)
+
+
 
   useEffect(() => {
-    carrinho.forEach(element => {
-      setValorTotal(valorTotal + (element.quantidade * element.preco))
-    });
-  }, [carrinho])
+  },[valorTotal, carrinho])
 
   return (
     <ImageBackground
@@ -40,7 +39,9 @@ export const Carrinho = ({}) => {
         renderItem={({item}) => <Card item={item} />}
       />
       <View style={styles.finalizar}>
-        <TouchableOpacity style={styles.botao} >
+        <TouchableOpacity style={styles.botao} onPress={() => {zeraCarrinho()
+        temp=0}  
+      }>
           <Text style={styles.botaoTexto}>Finalizar compra</Text>
         </TouchableOpacity>
       </View>
