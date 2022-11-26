@@ -17,7 +17,6 @@ export const styles = StyleSheet.create({
     cont1: {
       height: "53%",
       width: "100%",
-    //   backgroundColor: "red",
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -26,7 +25,6 @@ export const styles = StyleSheet.create({
       width: 297,
       backgroundColor: '#fff',
       borderRadius: 25,
-    //   marginTop: 70,
     },
     image: {
       width: "100%",
@@ -36,14 +34,12 @@ export const styles = StyleSheet.create({
     cont2: {
         height: "47%",
         width: "100%",
-        // backgroundColor: "green",
         alignItems: 'center',
 
       },
       informacao: {
         height: '70%',
         width: "100%", 
-        // backgroundColor: 'blue',
         alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'space-between'
@@ -54,12 +50,10 @@ export const styles = StyleSheet.create({
       width: 302,
       backgroundColor: '#fff',
       borderRadius: 15,
-    //   marginTop: 50,
     },
     texto1espaco: {
       height: "40%",
       width: "100%",
-      // backgroundColor: "#44000c",
       justifyContent: 'center',
     },
     texto1: {
@@ -70,7 +64,6 @@ export const styles = StyleSheet.create({
     texto2espaco: {
       height: "60%",
       width: "100%",
-      // backgroundColor: "#4584ee",
     },
     texto2: {
       fontSize: 18,
@@ -80,18 +73,19 @@ export const styles = StyleSheet.create({
     viewCompra: {
       height: 49,
       width: 298,
-      // backgroundColor: "#fff",
       flexDirection: 'row',
+      color: '#fff'
     },
     quantidade: {
       height: "100%",
       width: "34%",
-      backgroundColor: "#302d38",
+      backgroundColor: "#6f0d26",
       borderRadius: 25,
       alignItems: 'center',
       justifyContent: 'space-around',
       flexDirection: 'row',
       marginRight: 10,
+      color:'#fff'
     },
     quantidade1: {
       fontSize: 20,
@@ -102,12 +96,13 @@ export const styles = StyleSheet.create({
         width: 24,
         height: 24,
         margin: 6,
-        marginRight: 1, 
+        marginRight: 1,
+        color: '#fff' 
     },
     valor: {
       height: "100%",
       width: "64%",
-      backgroundColor: "#ee6b22",
+      backgroundColor: "#8f0d27",
       borderRadius: 25,
       justifyContent: 'center',
       alignItems: 'center',
@@ -116,7 +111,7 @@ export const styles = StyleSheet.create({
     },
     textoValor1: {
       fontSize: 15,
-      color: "#fff",
+      color: "#FFf",
       margin: 5,
     },
     textoValor2: {

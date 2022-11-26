@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#302d38',
+    backgroundColor: '#2f0d26',
     width: 'auto',
     maxWidth: 150,
     height: 60,
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textoCategoria: {
-    color: '#000000',
+    color: '#fff',
     fontSize: 16,
     fontWeight: '700',
     textAlign: 'right',

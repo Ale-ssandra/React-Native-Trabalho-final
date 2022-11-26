@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
  export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#1C1B1F',
+      backgroundColor: '#0e0c24',
     },
     desenvolverdor: {
-      color: '#B89EFC',
+      color: '#8f0d27',
       fontSize: 25,
       fontWeight: '900',
     },
@@ -13,7 +13,7 @@ import { StyleSheet } from 'react-native';
       marginTop: '20%',
       height: 600,
       width: '100%',
-      backgroundColor: '#272626',
+      backgroundColor: '#2f0d26',
       borderRadius: 40,
       flex: 1,
     },
@@ -23,7 +23,7 @@ import { StyleSheet } from 'react-native';
       alignSelf: 'center',
       marginTop: '-10%',
       elevation: 1,
-      borderColor: '#B89EFC',
+      borderColor: '#8f0d27',
       borderRadius: 100,
       borderWidth: 3,
     },
@@ -39,7 +39,7 @@ import { StyleSheet } from 'react-native';
       marginTop: '30%',
     },
     nome: {
-      color: '#B89EFC',
+      color: '#8f0d27',
       fontSize: 25,
       fontWeight: '900',
       marginBottom: '-50%',
@@ -60,28 +60,23 @@ import { StyleSheet } from 'react-native';
       textAlign: 'center',
       fontSize: 18,
       fontWeight: '900',
-      color: '#B89EFC',
+      color: '#8f0d27',
     },
     social:{
-  
     flexDirection:'row',
     justifyContent:'space-around',
     width:'50%',
     left:'50%',
     marginLeft:-200,
     marginBottom:'-40%',
-  
     },
-  
     contatoLinkedin: {
       width: 50,
       height: 50,
-    
     },
     contatoGit: {
       width: 50,
       height: 50,
-      
     },
     arrow: {
       width: 100,
@@ -93,7 +88,6 @@ import { StyleSheet } from 'react-native';
     marginTop: '100%',
     width: 50,
     height: 50,
-  
    }
     
   });

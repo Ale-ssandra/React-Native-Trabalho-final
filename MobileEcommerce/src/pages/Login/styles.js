@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1C1B1F',
+    backgroundColor: '#0e0c24',
   },
 
   imageBackground: {
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     marginTop: 35,
     width: 157,
     height: 35,
-    backgroundColor: '#B69DF8',
+    backgroundColor: '#8f0d27',
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: '#AEA9B4',
@@ -68,6 +68,6 @@ export const styles = StyleSheet.create({
   image:{
     width: 200,
     height: 200,
-    tintColor: '#B69DF8',
+    tintColor: '#8f0d27',
   }
 });

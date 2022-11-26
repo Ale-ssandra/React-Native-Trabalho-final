@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     taskContainer: {
-        backgroundColor: '#302d38',
+        backgroundColor: '#2f0d26',
         width: 160,
         height: 200,
         borderRadius: 30,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
       textoNome:{
         fontSize: 13,
         fontWeight: 'bold',
-        color: 'black',
+        color: 'white',
         marginTop:5,
         padding: 2,
       },
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
       textoValor:{
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black',
+        color: 'white',
         marginRight: 20,
       },
 

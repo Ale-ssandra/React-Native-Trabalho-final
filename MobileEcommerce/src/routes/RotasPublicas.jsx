@@ -63,12 +63,12 @@ export const RotasPublicas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#B69DF8' : 'white',
+                  tintColor: focused ? '#0e0c24' : 'white',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#B69DF8' : 'white',
+                  color: focused ? '#0e0c24' : 'white',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -91,12 +91,12 @@ export const RotasPublicas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#B69DF8' : 'white',
+                  tintColor: focused ? '#0e0c24' : 'white',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#B69DF8' : 'white',
+                  color: focused ? '#0e0c24' : 'white',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -119,12 +119,12 @@ export const RotasPublicas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#B69DF8' : 'white',
+                  tintColor: focused ? '#0e0c24' : 'white',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#B69DF8' : 'white',
+                  color: focused ? '#0e0c24' : 'white',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -147,12 +147,12 @@ export const RotasPublicas = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? '#B69DF8' : 'white',
+                  tintColor: focused ? '#0e0c24' : 'white',
                 }}
               />
               <Text
                 style={{
-                  color: focused ? '#B69DF8' : 'white',
+                  color: focused ? '#0e0c24' : 'white',
                   fontSize: 12,
                   marginTop: 3,
                 }}>
@@ -168,7 +168,7 @@ export const RotasPublicas = () => {
 
 const styles = StyleSheet.create({
   shadow: {
-    shadowColor: '#B69DF8',
+    shadowColor: '#0e0c24',
     shadowOffset: {
       width: 5,
       height: 0,

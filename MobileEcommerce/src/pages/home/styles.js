@@ -8,10 +8,10 @@ export const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#1C1B1F',
+    backgroundColor: '#0e0c24',
   },
   header: {
-    backgroundColor: '#272626',
+    backgroundColor: '#2f0d26',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#302d38',
+    backgroundColor: '#2f0d26',
     width: '76%',
     height: 168,
     marginStart: '14%',
