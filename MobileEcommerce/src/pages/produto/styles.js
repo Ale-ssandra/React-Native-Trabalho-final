@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     viewFoto: {
       height: 290,
       width: 297,
-      backgroundColor: '#fff',
+      backgroundColor: 'red',
       borderRadius: 25,
     },
     image: {
@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
     viewTexto: {
       height: 150,
       width: 302,
-      backgroundColor: '#fff',
+      backgroundColor: '#2f0d26',
       borderRadius: 15,
     },
     texto1espaco: {
@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
     },
     texto1: {
       fontSize: 25,
-      color: "#6f0d26",
+      color: "#fff",
       marginLeft: 10,
     },
     texto2espaco: {
@@ -67,14 +67,14 @@ export const styles = StyleSheet.create({
     },
     texto2: {
       fontSize: 18,
-      color: "#6f0d26",
+      color: "#fff",
       marginLeft: 10,
     },
     viewCompra: {
       height: 49,
       width: 298,
       flexDirection: 'row',
-      color: '#fff'
+      color: 'blue'
     },
     quantidade: {
       height: "100%",
@@ -102,7 +102,7 @@ export const styles = StyleSheet.create({
     valor: {
       height: "100%",
       width: "64%",
-      backgroundColor: "#8f0d27",
+      backgroundColor: "#6f0d26",
       borderRadius: 25,
       justifyContent: 'center',
       alignItems: 'center',

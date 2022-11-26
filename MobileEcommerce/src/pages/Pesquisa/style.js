@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1C1B1F',
+        backgroundColor: '#0e0c24',
       },
       containerPesquisa:{
         display: 'flex',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
           },
       imgPesquisa:{
         position: 'absolute',
-        tintColor: '#ffffff',
+        tintColor: '#fff',
         height: 40,
         width: 40,
         left: 75, 
@@ -24,11 +24,11 @@ export const styles = StyleSheet.create({
       inputPesquisa:{
         width: '70%',
         height: 60,
-        borderColor: '#FFFFFF',
+        borderColor: '#8f0d27',
         borderWidth:2,
         borderRadius: 100,
         paddingLeft: 70,
-        color: '#FFFFFF',
+        color: '#8f0d27',
         fontSize: 18,
       },    
       boxFiltros:{
@@ -46,10 +46,11 @@ export const styles = StyleSheet.create({
       imageBackground: {
         flex: 1,
         left: 30,
-        borderTopColor: '#FFFFFF',
-        borderLeftColor:'#FFFFFF',
+        borderTopColor: '#8f0d27',
+        borderLeftColor:'#8f0d27',
         borderTopWidth: 1,
         borderLeftWidth: 1,
+        
         paddingBottom: 65
       },
       cardsProdutos:{

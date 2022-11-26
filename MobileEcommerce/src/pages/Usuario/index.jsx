@@ -2,17 +2,11 @@ import React, { useContext, useState } from "react";
 import { Text, View, Image,TouchableOpacity,ImageBackground, StatusBar ,useEffect } from "react-native";
 import AuthContext from "../../context/AuthContext";
 import { styles } from "./style";
-import { getLogin } from "../../services/taskClient";
+
 
 export const Usuario = () => {
-    const { logoutContext } = useContext(AuthContext)
+    const { logoutContext , user } = useContext(AuthContext)
 
-    const [login, setLogin] = useState('')
-
-    const nomeUsuario = async () => {
-        const newUsuario = await getLogin();
-        setLogin(newUsuario);
-      };
 
     return (
         <ImageBackground
@@ -25,9 +19,11 @@ export const Usuario = () => {
 
             <View style={styles.box}>
 
-                <Image style={styles.perfil} source={require('../../images/user.png')}>
+                <Image style={styles.perfil} source={{uri: item.foto}}>
                 </Image>
-                <Text style={styles.nome}>{login.nome}</Text>
+                <Text style={styles.nome}>{user.nome}</Text>
+                <Text style={styles.nome}>{user.login}</Text>
+                <Text style={styles.nome}>Código do cliente: {user.id*2345}</Text>
             </View>
             <View style={styles.boxSair}>
 

@@ -8,23 +8,20 @@ import {
 import {styles} from './styles.js';
 import { mandarParaCarrinho } from '../../pages/produto'
 
-export const Card = ({ route, qtdProduto }) => {
-  const [qtd, setQtd] = useState(qtdProduto);
+export const Card = ( {item} ) => {
 
-  
   const adicionar = () => {
-    setQtd(qtdProduto + 1);
-    setValor((qtd + 1) * route.params.preco)
+    item.quantidade +=  1;
   };
 
   const subtrair = () => {
-    if (qtd == 1) {
+    if (item.quantidade == 1) {
       alert('Quantidade não pode ser zero');
     } else {
-      setQtd(qtd - 1);
+      item.quantidade -= 1;
     }
   };
-  
+
   return (
     <View style={styles.card}>
       <TouchableOpacity>
@@ -57,7 +54,7 @@ export const Card = ({ route, qtdProduto }) => {
             style={styles.imagens}
           />
         </TouchableOpacity>
-        <Text style={styles.quantidade}>{qtd}</Text>
+        <Text style={styles.quantidade}>{item.quantidade}</Text>
 
         <TouchableOpacity onPress={subtrair}>
           <Image

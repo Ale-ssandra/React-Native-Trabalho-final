@@ -14,7 +14,7 @@ import AuthContext, {verificaEstaParada} from '../../context/AuthContext';
 export const Login = ({navigation}) => {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
-  const {loginContext} = useContext(AuthContext)
+  const { loginContext } = useContext(AuthContext)
 
   const verificacaoLogin = async () => {
     if (userName != null || password != null) {
@@ -64,7 +64,7 @@ export const Login = ({navigation}) => {
             value={password}
           />
           <TouchableOpacity style={styles.buttonLogin}>
-            <Text onPress={() => loginContext()} style={styles.buttonText}>
+            <Text onPress={() => loginContext(userName, password)} style={styles.buttonText}>
               Entrar
             </Text>
           </TouchableOpacity>

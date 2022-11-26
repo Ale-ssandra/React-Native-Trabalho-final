@@ -2,11 +2,20 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     taskContainer: {
-        backgroundColor: '#2f0d26',
+        backgroundColor: '#8f0d27',
         width: 160,
         height: 200,
         borderRadius: 30,
         alignItems:'center',
+        shadowColor:'#ffff',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
       },
       imagem:{
         height: 120,

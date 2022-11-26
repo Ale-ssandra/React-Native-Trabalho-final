@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     width: '100%',
-    height: '14%',
+    height: '14%'
   },
   logo:{
     left: 10,
@@ -33,10 +33,19 @@ export const styles = StyleSheet.create({
     marginStart: '14%',
     marginVertical: 15,
     borderRadius: 15,
+    shadowColor:'#ffff',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   texto: {
     padding: 6,
-    color: '#ffff',
+    color: '#fff',
     fontSize: 26,
     fontWeight: '400',
     textShadowColor: 'rgba(0, 0, 0, 0.8)',
@@ -45,9 +54,12 @@ export const styles = StyleSheet.create({
   },
   textoBanner: {
     padding: 6,
-    color: '#000000',
+    color: '#fff',
     fontSize: 32,
     fontWeight: '800',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: {width: 6, height: 5},
+    textShadowRadius: 4,
   },
   textoNome: {
     color: '#000000',
@@ -56,13 +68,12 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   textoValor: {
-    color: '#000000',
+    color: 'b',
     fontSize: 22,
     fontWeight: '900',
   },
   containerCards: {
     flexDirection: 'column',
-    //   backgroundColor: '#1C1B1F',
     marginBottom: 15,
     justifyContent: 'center',
   },
@@ -76,10 +87,10 @@ export const styles = StyleSheet.create({
   card: {
     width: '35%',
     height: 200,
-    backgroundColor: '#FFFBFE',
+    backgroundColor: 'blue',
     borderRadius: 15,
     marginStart: '10%',
-    shadowColor: '#fff',
+    shadowColor: 'blue',
   },
   flatbox: {
     height: 425,
